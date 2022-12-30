@@ -1,24 +1,23 @@
-local util = require('quicknote.utils')
-local todo = util.todo
+local utils = require('quicknote.utils')
 
 -- Define API
 return {
-    NewNoteAtCWD = todo("NewNoteAtCWD"),
-    NewNoteAtLine = todo("NewNoteAtLine"),
-    NewNoteAtCurrentLine = todo("NewNoteAtCurrentLine"),
-    NewNoteAtGlobal = todo("NewNoteAtGlobal"),
+    NewNoteAtCWD = utils.todo("NewNoteAtCWD"),
+    NewNoteAtLine = utils.todo("NewNoteAtLine"),
+    NewNoteAtCurrentLine = utils.todo("NewNoteAtCurrentLine"),
+    NewNoteAtGlobal = utils.todo("NewNoteAtGlobal"),
 
-    GetNoteAtLine = todo("GetNoetAtLine"),
-    GetNoteAtCurrentLine = todo("GetNoteAtCurrentLine"),
-    GetNoteAtGlobal = todo("GetNoteAtGlobal"),
-    GetNoteAtCWD = todo("GetNoteAtCWD"),
+    GetNoteAtLine = utils.todo("GetNoetAtLine"),
+    GetNoteAtCurrentLine = utils.todo("GetNoteAtCurrentLine"),
+    GetNoteAtGlobal = utils.todo("GetNoteAtGlobal"),
+    GetNoteAtCWD = utils.todo("GetNoteAtCWD"),
 
-    DeleteNoteAtLine = todo("DeleteNoteAtLine"),
-    DeleteNoteAtCurrentLine = todo("DeleteNoteAtCurrentLine"),
-    DeleteNoteAtGlobal = todo("DeleteNoteAtGlobal"),
-    DeleteNoteAtCWD = todo("DeleteNoteAtCWD"),
+    DeleteNoteAtLine = utils.todo("DeleteNoteAtLine"),
+    DeleteNoteAtCurrentLine = utils.todo("DeleteNoteAtCurrentLine"),
+    DeleteNoteAtGlobal = utils.todo("DeleteNoteAtGlobal"),
+    DeleteNoteAtCWD = utils.todo("DeleteNoteAtCWD"),
 
-    ShowNoteSign = todo("ShowNoteSign"),
-    HideNoteSign = todo("HideNoteSign"),
-    ToggleNoteSign = todo("ToggleNoteSign"),
+    ShowNoteSign = utils.todo("ShowNoteSign"),
+    HideNoteSign = utils.todo("HideNoteSign"),
+    ToggleNoteSign = utils.todo("ToggleNoteSign"),
 }
