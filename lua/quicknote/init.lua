@@ -1,5 +1,5 @@
 local utils = require('quicknote.utils')
-local new = require('quicknote.core.mew')
+local new = require('quicknote.core.new')
 
 -- Define API
 return {
