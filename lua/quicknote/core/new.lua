@@ -21,7 +21,7 @@ local newNoteAtCurrentLine = function()
     end
 end
 
-M.newNoteAtCurrentLine = function ()
+M.NewNoteAtCurrentLine = function ()
    async.run(newNoteAtCurrentLine)
 end
 
