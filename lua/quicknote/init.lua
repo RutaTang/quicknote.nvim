@@ -18,12 +18,12 @@ return {
     NewNoteAtGlobal = utils.todo("NewNoteAtGlobal"),
 
     OpenNoteAtLine = utils.todo("GetNoetAtLine"),
-    OpenNoteAtCurrentLine = utils.todo("GetNoteAtCurrentLine"),
+    OpenNoteAtCurrentLine = core.new.OpenNoteAtCurrentLine,
     OpenNoteAtGlobal = utils.todo("GetNoteAtGlobal"),
     OpenNoteAtCWD = utils.todo("GetNoteAtCWD"),
 
     DeleteNoteAtLine = utils.todo("DeleteNoteAtLine"),
-    DeleteNoteAtCurrentLine = utils.todo("DeleteNoteAtCurrentLine"),
+    DeleteNoteAtCurrentLine = core.new.DeleteNoteAtCurrentLine,
     DeleteNoteAtGlobal = utils.todo("DeleteNoteAtGlobal"),
     DeleteNoteAtCWD = utils.todo("DeleteNoteAtCWD"),
 
