@@ -1,6 +1,9 @@
 local utils = require('quicknote.utils')
 local new = require('quicknote.core.new')
 
+-- init data folder for quick note
+utils.MKDir(utils.GetDataPath())
+
 -- Define API
 return {
     NewNoteAtCWD = utils.todo("NewNoteAtCWD"),
