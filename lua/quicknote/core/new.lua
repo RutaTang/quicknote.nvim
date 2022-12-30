@@ -3,7 +3,7 @@ local dataPath = vim.fn.stdpath("data") .. "/quicknote"
 
 local M = {}
 
-M.NewNoteAtCurrentLine = function()
+local newNoteAtCurrentLine = function()
     -- get current
     local line = vim.api.nvim_win_get_cursor(0)[1]
     -- get current buffer file path
@@ -19,6 +19,10 @@ M.NewNoteAtCurrentLine = function()
             error("Error: " .. err)
         end
     end
+end
+
+M.newNoteAtCurrentLine = function ()
+   async.run(newNoteAtCurrentLine)
 end
 
 return M
