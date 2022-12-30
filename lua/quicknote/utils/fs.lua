@@ -21,7 +21,7 @@ local M = {}
 
 M.MKDir = function(path)
     async.run(function()
-        mkdir(path)
+        print(1)
     end)
 end
 
