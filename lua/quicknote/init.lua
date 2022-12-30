@@ -1,11 +1,11 @@
 local utils = require('quicknote.utils')
-local core = require('quicknote.core')
+local new = require('quicknote.core.mew')
 
 -- Define API
 return {
     NewNoteAtCWD = utils.todo("NewNoteAtCWD"),
     NewNoteAtLine = utils.todo("NewNoteAtLine"),
-    NewNoteAtCurrentLine = core.new.NewNoteAtCurrentLine,
+    NewNoteAtCurrentLine = new.NewNoteAtCurrentLine,
     NewNoteAtGlobal = utils.todo("NewNoteAtGlobal"),
 
     GetNoteAtLine = utils.todo("GetNoetAtLine"),
