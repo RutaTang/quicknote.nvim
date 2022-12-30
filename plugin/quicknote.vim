@@ -1,1 +1,1 @@
-echo 1
+command! QN lua print(1)
