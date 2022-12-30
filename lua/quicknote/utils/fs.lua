@@ -20,7 +20,9 @@ end
 local M = {}
 
 M.MKDir = function(path)
-    async.run(mkdir(path))
+    async.run(function()
+        mkdir(path)
+    end)
 end
 
 M.GetDataPath = function()

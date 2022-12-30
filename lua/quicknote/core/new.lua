@@ -18,8 +18,6 @@ end
 -- Export
 local M = {}
 
-M.NewNoteAtCurrentLine = function()
-    async.run(newNoteAtCurrentLine)
-end
+M.NewNoteAtCurrentLine = newNoteAtCurrentLine
 
 return M
