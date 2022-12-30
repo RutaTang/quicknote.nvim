@@ -12,10 +12,10 @@ end, function() end)
 
 -- Define API
 return {
-    NewNoteAtCWD = utils.todo("NewNoteAtCWD"),
-    NewNoteAtLine = utils.todo("NewNoteAtLine"),
+    NewNoteAtCWD = core.new.NewNoteAtCWD,
+    NewNoteAtLine = core.new.NewNoteAtLine,
     NewNoteAtCurrentLine = core.new.NewNoteAtCurrentLine,
-    NewNoteAtGlobal = utils.todo("NewNoteAtGlobal"),
+    NewNoteAtGlobal = core.new.NewNoteAtGlobal,
 
     OpenNoteAtLine = utils.todo("GetNoetAtLine"),
     OpenNoteAtCurrentLine = core.new.OpenNoteAtCurrentLine,
