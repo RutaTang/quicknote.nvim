@@ -7,5 +7,5 @@ local function todo(content)
 end
 
 return {
-    todo
+    todo = todo
 }
