@@ -17,15 +17,19 @@ return {
     NewNoteAtCurrentLine = core.new.NewNoteAtCurrentLine,
     NewNoteAtGlobal = core.new.NewNoteAtGlobal,
 
-    OpenNoteAtLine = utils.todo("GetNoetAtLine"),
+    OpenNoteAtLine = core.new.OpenNoteAtLine,
     OpenNoteAtCurrentLine = core.new.OpenNoteAtCurrentLine,
-    OpenNoteAtGlobal = utils.todo("GetNoteAtGlobal"),
-    OpenNoteAtCWD = utils.todo("GetNoteAtCWD"),
+    OpenNoteAtGlobal = core.new.OpenNoteAtGlobal,
+    OpenNoteAtCWD = core.new.OpenNoteAtCWD,
 
-    DeleteNoteAtLine = utils.todo("DeleteNoteAtLine"),
+    DeleteNoteAtLine = core.new.DeleteNoteAtLine,
     DeleteNoteAtCurrentLine = core.new.DeleteNoteAtCurrentLine,
-    DeleteNoteAtGlobal = utils.todo("DeleteNoteAtGlobal"),
-    DeleteNoteAtCWD = utils.todo("DeleteNoteAtCWD"),
+    DeleteNoteAtGlobal = core.new.DeleteNoteAtGlobal,
+    DeleteNoteAtCWD = core.new.DeleteNoteAtCWD,
+
+    ListNotesForCurrentBuffer = core.new.ListNotesForCurrentBuffer,
+    ListNotesForCWD = core.new.ListNotesForCWD,
+    ListNotesForGlobal = core.new.ListNotesForGlobal,
 
     ShowNoteSign = utils.todo("ShowNoteSign"),
     HideNoteSign = utils.todo("HideNoteSign"),

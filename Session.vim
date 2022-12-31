@@ -13,9 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +5 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/new.lua
+badd +1 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/new.lua
 badd +1 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/init.lua
-badd +0 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/utils/fs.lua
+badd +5 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/utils/fs.lua
+badd +0 lua/quicknote/init.lua
 argglobal
 %argdel
 edit ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/new.lua
@@ -49,19 +50,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 25) / 51)
+let s:l = 9 - ((8 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
+keepjumps 9
 normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/utils/fs.lua", ":p")) | buffer ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/utils/fs.lua | else | edit ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/utils/fs.lua | endif
+if bufexists(fnamemodify("lua/quicknote/init.lua", ":p")) | buffer lua/quicknote/init.lua | else | edit lua/quicknote/init.lua | endif
 if &buftype ==# 'terminal'
-  silent file ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/utils/fs.lua
+  silent file lua/quicknote/init.lua
 endif
-balt ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/init.lua
+balt ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/utils/fs.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -72,13 +73,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 25) / 51)
+let s:l = 8 - ((7 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
+keepjumps 8
 normal! 0
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 93 + 94) / 188)
 exe 'vert 2resize ' . ((&columns * 94 + 94) / 188)
 tabnext 1

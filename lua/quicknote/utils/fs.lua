@@ -13,7 +13,7 @@ local M = {}
 M.MKDirAsync = function(path)
     local err, stat = async.uv.fs_stat(path)
     if err or stat == nil then
-        local err, success = async.uv.fs_mkdir(path, tonumber("511", 8))
+        local err, success = async.uv.fs_mkdir(path, tonumber("711", 8))
         if err or not success then
             error("Error: " .. err)
         end
