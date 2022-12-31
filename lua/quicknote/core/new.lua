@@ -2,6 +2,7 @@ local async = require("plenary.async")
 local path = require("plenary.path")
 local utils_fs = require("quicknote.utils.fs")
 local utils_path = require("quicknote.utils.path")
+local sign = require("quicknote.core.sign")
 
 -- Export
 local M = {}
@@ -47,6 +48,10 @@ end
 -- Create a new note at a given line for the current buffer
 -- @param line: line number
 local NewNoteAtLineAsync = function(line)
+    if line == nil or line <= 0 then
+        print("line number should be given and bigger than 0")
+        return
+    end
     -- get note file path
     local noteDirPath = utils_path.getNoteDirPathForCurrentBuffer()
 
@@ -60,7 +65,10 @@ end
 M.NewNoteAtLine = function(line)
     async.run(function()
         NewNoteAtLineAsync(line)
-    end, function() end)
+    end, function()
+        -- if the show sign is enabled, show the sign
+        vim.defer_fn(sign.ReShowSignsForCurrentBuffer, 0)
+    end)
 end
 
 -- Create a new note at current cursor line for current buffer
@@ -70,8 +78,10 @@ local NewNoteAtCurrentLineAsync = function()
     NewNoteAtLineAsync(line)
 end
 M.NewNoteAtCurrentLine = function()
-    async.run(NewNoteAtCurrentLineAsync, function() end)
+    async.run(NewNoteAtCurrentLineAsync, function()
+        -- if the show sign is enabled, show the sign
+        vim.defer_fn(sign.ReShowSignsForCurrentBuffer, 0)
+    end)
 end
-
 
 return M

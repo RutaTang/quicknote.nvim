@@ -14,9 +14,10 @@ else
   set shortmess=aoO
 endif
 badd +1 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/new.lua
-badd +1 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/init.lua
+badd +6 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/init.lua
 badd +5 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/utils/fs.lua
-badd +0 lua/quicknote/init.lua
+badd +1 lua/quicknote/init.lua
+badd +13 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/sign.lua
 argglobal
 %argdel
 edit ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/new.lua
@@ -39,7 +40,7 @@ set winwidth=1
 exe 'vert 1resize ' . ((&columns * 93 + 94) / 188)
 exe 'vert 2resize ' . ((&columns * 94 + 94) / 188)
 argglobal
-balt ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/init.lua
+balt ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/sign.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -50,11 +51,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 25) / 51)
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9
+keepjumps 1
 normal! 0
 wincmd w
 argglobal
@@ -73,14 +74,13 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 25) / 51)
+let s:l = 12 - ((11 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
+keepjumps 12
 normal! 0
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 93 + 94) / 188)
 exe 'vert 2resize ' . ((&columns * 94 + 94) / 188)
 tabnext 1
@@ -98,7 +98,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

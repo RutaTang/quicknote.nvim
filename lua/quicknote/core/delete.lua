@@ -1,5 +1,6 @@
 local path = require("plenary.path")
 local utils_path = require("quicknote.utils.path")
+local sign = require("quicknote.core.sign")
 
 -- check if note file exist, if exists, delete it
 local checkAndDeleteNoteFile = function(noteFilePath)
@@ -28,6 +29,9 @@ local DeleteNoteAtLine = function(line)
 
     -- check if note file exist
     checkAndDeleteNoteFile(noteFilePath)
+
+    -- if the show sign is enabled, show the sign
+    vim.defer_fn(sign.ReShowSignsForCurrentBuffer, 10)
 end
 M.DeleteNoteAtLine = DeleteNoteAtLine
 

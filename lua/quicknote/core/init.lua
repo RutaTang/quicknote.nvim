@@ -2,6 +2,7 @@ local new = require("quicknote.core.new")
 local open = require("quicknote.core.open")
 local delete = require("quicknote.core.delete")
 local list = require("quicknote.core.list")
+local sign = require("quicknote.core.sign")
 
 return {
     NewNoteAtGlobal = new.NewNoteAtGlobal,
@@ -22,4 +23,9 @@ return {
     ListNotesForGlobal = list.ListNotesForGlobal,
     ListNotesForCWD = list.ListNotesForCWD,
     ListNotesForCurrentBuffer = list.ListNotesForCurrentBuffer,
+
+    ShowNoteSigns = sign.ShowNoteSigns,
+    HideNoteSigns = sign.HideNoteSigns,
+    DefineSign = sign.DefineSign,
+    ToggleNoteSigns = sign.ToggleNoteSigns,
 }

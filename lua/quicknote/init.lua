@@ -4,13 +4,19 @@ local utils = require("quicknote.utils")
 utils.fs = require("quicknote.utils.fs")
 local core = require("quicknote.core")
 
--- init data folder for quick note
-async.run(function()
-    utils.fs.MKDirAsync(utils.fs.GetDataPath())
-end, function() end)
+local setup = function(config)
+    -- init data folder for quick note
+    async.run(function()
+        utils.fs.MKDirAsync(utils.fs.GetDataPath())
+    end, function() end)
+    -- Define sign for quicknote
+    core.DefineSign()
+end
 
 -- Define API
 return {
+    setup = setup,
+
     NewNoteAtCWD = core.NewNoteAtCWD,
     NewNoteAtLine = core.NewNoteAtLine,
     NewNoteAtCurrentLine = core.NewNoteAtCurrentLine,
@@ -30,7 +36,7 @@ return {
     ListNotesForCWD = core.ListNotesForCWD,
     ListNotesForGlobal = core.ListNotesForGlobal,
 
-    ShowNoteSign = utils.todo("ShowNoteSign"),
-    HideNoteSign = utils.todo("HideNoteSign"),
-    ToggleNoteSign = utils.todo("ToggleNoteSign"),
+    ShowNoteSigns = core.ShowNoteSigns,
+    HideNoteSigns = core.HideNoteSigns,
+    ToggleNoteSigns = core.ToggleNoteSigns,
 }
