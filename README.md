@@ -22,6 +22,7 @@ require("lazy").setup({
 Still in active development, some APIs may be broken later.
 
 1. New note
+
 | Function | Description |
 | --- | ---|
 | `NewNoteAtCWD()` | create a note at current working directory|
@@ -30,6 +31,7 @@ Still in active development, some APIs may be broken later.
 | `NewNoteAtGlobal` | create a note can be accessed globally|
 
 2. Open note 
+
 | Function | Description |
 | --- | ---|
 | `OpenNoteAtCWD()` | open a note at CWD, you will input the name of the note|
@@ -38,6 +40,7 @@ Still in active development, some APIs may be broken later.
 | `OpenNoteAtGlobal()` | open a note in global, you will input the name of the note |
 
 3. Delete note
+
 | Function | Description |
 | --- | ---|
 | `DeleteNoteAtCWD()` | delete a note at CWD, you will input the name of the note|
@@ -46,6 +49,7 @@ Still in active development, some APIs may be broken later.
 | `DeleteNoteAtGlobal(line)` | delete a note in global, you will input the name of the note |
 
 4. List note
+
 | Funtion | Description |
 | --- | --- |
 | `ListNotesForCurrentBuffer()` | list all notes associated with current buffer |
@@ -53,6 +57,7 @@ Still in active development, some APIs may be broken later.
 | `ListNotesForGlobal()`| list all notes in global |
 
 5. Signs
+
 | Funtion | Description |
 | --- | --- |
 | `ShowNoteSigns` | show signs for current buffer |
