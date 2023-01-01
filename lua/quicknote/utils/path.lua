@@ -4,6 +4,17 @@ local sha = require("quicknote.utils.sha")
 
 local M = {}
 
+local getHashedNoteDirPath = function(filePath)
+    -- data path is where note dir is stored
+    local dataPath = utils_fs.GetDataPath()
+    -- get hash of note dir path
+    local noteDirName = sha.sha1(filePath) -- hash current buffer path
+    -- get hashed note dir path
+    local noteDirPath = path:new(dataPath, noteDirName).filename
+    return noteDirPath
+end
+M.getHashedNoteDirPath = getHashedNoteDirPath
+
 -- Get the path to the notes directory corresponding to the current buffer
 -- Note: one buffer can have multiple notes; the name of the dir is the hash of the buffer file name
 local getNoteDirPathForCurrentBuffer = function()
@@ -11,9 +22,7 @@ local getNoteDirPathForCurrentBuffer = function()
     local currentBufferPath = vim.api.nvim_buf_get_name(0)
 
     -- get note dir path
-    local dataPath = utils_fs.GetDataPath()
-    local noteDirName = sha.sha1(currentBufferPath) -- hash current buffer path
-    local noteDirPath = path:new(dataPath, noteDirName).filename
+    local noteDirPath = getHashedNoteDirPath(currentBufferPath)
 
     return noteDirPath
 end
@@ -25,13 +34,12 @@ local getNoteDirPathForCurrentCWD = function()
     local cwdPath = vim.fn.getcwd()
 
     -- get note dir path
-    local dataPath = utils_fs.GetDataPath()
-    local noteDirName = sha.sha1(cwdPath)
-    local noteDirPath = path:new(dataPath, noteDirName).filename
+    local noteDirPath = getHashedNoteDirPath(cwdPath)
 
     return noteDirPath
 end
 M.getNoteDirPathForCurrentCWD = getNoteDirPathForCurrentCWD
+
 
 -- same as getNoteDirPath*, but for a global note
 local getNoteDirPathForGlobal = function()

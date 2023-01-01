@@ -33,7 +33,6 @@ local listNotes = function(noteDirPath)
     end)
 end
 
-
 local M = {}
 
 -- List all notes for current buffer file
@@ -55,6 +54,62 @@ local ListNotesForCWD = function()
     listNotes(noteDirPath)
 end
 M.ListNotesForCWD = ListNotesForCWD
+
+-- List all notes for CWD including files under the current dir and all offspring dirs
+local ListNotesForAFileOrWDInCWD = function()
+    -- get CWD path
+    local cwdPath = vim.fn.getcwd()
+    -- get all paths of files under cwd and its offspring dirs
+    local filePaths = vim.fn.glob(cwdPath .. "/**/*", true, true)
+    table.insert(filePaths, 1, cwdPath)
+
+    -- check if any note dir exist
+    local noteDirPaths = {}
+    local existedFilePaths = {}
+    for _, filePath in ipairs(filePaths) do
+        local noteDirPath = utils_path.getHashedNoteDirPath(filePath)
+        local stat = vim.loop.fs_stat(noteDirPath)
+        if stat then
+            -- list notes
+            table.insert(noteDirPaths, noteDirPath)
+            table.insert(existedFilePaths, filePath)
+        end
+    end
+    if #noteDirPaths == 0 then
+        print("No file or dir containing notes in CWD")
+        return
+    end
+
+    -- list offspring files under CWD for user to choose
+    local message = ""
+    for idx, filePath in ipairs(existedFilePaths) do
+        message = message .. idx .. " " .. "." .. string.sub(filePath, #cwdPath + 1, #filePath) .. "\n"
+    end
+    message = "Choose a file to list notes for:\n" .. message
+    print(message)
+
+    -- get user input for file index
+    local choice = vim.fn.input("Enter the index: ")
+    choice = tonumber(choice)
+    vim.cmd([[:redraw]]) -- redraw messages
+
+    -- check if user input is valid
+    if choice == nil then
+        print("You should input an index to choose a file or dir to list notes.")
+        return
+    end
+    if choice < 1 or choice > #filePaths then
+        print("Index out of range.")
+        return
+    end
+
+    -- get note dir path
+    local noteDirPath = noteDirPaths[choice]
+
+    -- list notes
+    listNotes(noteDirPath)
+end
+M.ListNotesForAFileOrWDInCWD = ListNotesForAFileOrWDInCWD
 
 -- List all notes for global
 local ListNotesForGlobal = function()

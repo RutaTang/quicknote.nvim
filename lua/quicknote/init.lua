@@ -34,6 +34,7 @@ return {
 
     ListNotesForCurrentBuffer = core.ListNotesForCurrentBuffer,
     ListNotesForCWD = core.ListNotesForCWD,
+    ListNotesForAFileOrWDInCWD = core.ListNotesForAFileOrWDInCWD,
     ListNotesForGlobal = core.ListNotesForGlobal,
 
     ShowNoteSigns = core.ShowNoteSigns,

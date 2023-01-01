@@ -22,6 +22,7 @@ return {
 
     ListNotesForGlobal = list.ListNotesForGlobal,
     ListNotesForCWD = list.ListNotesForCWD,
+    ListNotesForAFileOrWDInCWD = list.ListNotesForAFileOrWDInCWD,
     ListNotesForCurrentBuffer = list.ListNotesForCurrentBuffer,
 
     ShowNoteSigns = sign.ShowNoteSigns,
