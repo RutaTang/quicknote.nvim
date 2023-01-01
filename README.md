@@ -55,6 +55,7 @@ Still in active development, some APIs may be broken later.
 | `ListNotesForCurrentBuffer()` | list all notes associated with current buffer |
 | `ListNotesForCWD()` | list all notes created in CWD |
 | `ListNotesForGlobal()`| list all notes in global |
+| `ListNotesForAFileOrWDInCWD()` | list all notes for a certain file or directory under CWD |
 
 5. Signs
 
