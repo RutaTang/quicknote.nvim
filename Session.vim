@@ -13,13 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +79 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/list.lua
-badd +24 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/init.lua
-badd +43 lua/quicknote/utils/path.lua
-badd +37 lua/quicknote/init.lua
+badd +3 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/init.lua
+badd +7 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/jump.lua
+badd +4 ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/new.lua
 argglobal
 %argdel
-edit ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/list.lua
+edit ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/jump.lua
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -36,10 +35,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 93 + 94) / 188)
-exe 'vert 2resize ' . ((&columns * 94 + 94) / 188)
+exe 'vert 1resize ' . ((&columns * 94 + 94) / 188)
+exe 'vert 2resize ' . ((&columns * 93 + 94) / 188)
 argglobal
-balt lua/quicknote/utils/path.lua
+balt ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/init.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -50,19 +49,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 79 - ((23 * winheight(0) + 25) / 51)
+let s:l = 7 - ((6 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 79
-normal! 064|
+keepjumps 7
+normal! 047|
 wincmd w
 argglobal
-if bufexists(fnamemodify("lua/quicknote/init.lua", ":p")) | buffer lua/quicknote/init.lua | else | edit lua/quicknote/init.lua | endif
+if bufexists(fnamemodify("~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/init.lua", ":p")) | buffer ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/init.lua | else | edit ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/init.lua | endif
 if &buftype ==# 'terminal'
-  silent file lua/quicknote/init.lua
+  silent file ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/init.lua
 endif
-balt ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/init.lua
+balt ~/Coding/NeovimPlugins/quicknote.nvim/lua/quicknote/core/new.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -73,16 +72,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 37 - ((36 * winheight(0) + 25) / 51)
+let s:l = 3 - ((2 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 37
-normal! 011|
+keepjumps 3
+normal! 0
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 93 + 94) / 188)
-exe 'vert 2resize ' . ((&columns * 94 + 94) / 188)
+exe 'vert 1resize ' . ((&columns * 94 + 94) / 188)
+exe 'vert 2resize ' . ((&columns * 93 + 94) / 188)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

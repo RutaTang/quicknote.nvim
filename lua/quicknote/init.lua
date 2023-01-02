@@ -37,6 +37,9 @@ return {
     ListNotesForAFileOrWDInCWD = core.ListNotesForAFileOrWDInCWD,
     ListNotesForGlobal = core.ListNotesForGlobal,
 
+    JumpToNextNote = core.JumpToNextNote,
+    JumpToPreviousNote = core.JumpToPreviousNote,
+
     ShowNoteSigns = core.ShowNoteSigns,
     HideNoteSigns = core.HideNoteSigns,
     ToggleNoteSigns = core.ToggleNoteSigns,
