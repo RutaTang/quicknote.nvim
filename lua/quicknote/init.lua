@@ -38,7 +38,15 @@ return {
     ListNotesForGlobal = core.ListNotesForGlobal,
 
     JumpToNextNote = core.JumpToNextNote,
+    -- TODO: not ye implement
     JumpToPreviousNote = core.JumpToPreviousNote,
+
+    -- TODO:
+    -- Export note
+    -- Import note
+    -- Clear note in current buffer, cwd, global
+    -- (Optional for now) open web browser to show note (list)
+    -- (Optional for now) integrate with telescope
 
     ShowNoteSigns = core.ShowNoteSigns,
     HideNoteSigns = core.HideNoteSigns,
