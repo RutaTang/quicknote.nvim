@@ -2,7 +2,7 @@
 
 This is a note taking plugin for Neovim, aiming to help you quickly create, delete, read, and edit notes.
 
-A note can be associated with current cursor line, or current working directory, or be put in global. Thus, for example, a typical use case is that when you are reading source code, you can quickly create note associated with the cursor line where the source code may confuse you, can write down some notes and continue reading. A while later, when you want to read the note you have created at that cursor line, just go back to that cursor line and open the note associated with it.
+A note can be associated with current cursor line, or current working directory, or be put in global. Thus, for example, a typical use case is that when you are reading source code, you can quickly create note associated with the cursor line where the source code may confuse you, then write down some notes and continue reading. A while later, when you want to read the note you have created at that cursor line, just go back to that cursor line and open the note associated with it.
 
 ![Showcase](./showcase.gif)
 
@@ -13,7 +13,7 @@ Like, for lazy.nvim (a modern plugin manager for Neovim):
 
 ```lua
 require("lazy").setup({
-  { "RutaTang/quicknote.nvim", config={} },
+  { "RutaTang/quicknote.nvim", config={}, dependencies = { "nvim-lua/plenary.nvim"} },
 })
 ```
 
@@ -57,7 +57,13 @@ Still in active development, some APIs may be broken later.
 | `ListNotesForGlobal()`| list all notes in global |
 | `ListNotesForAFileOrWDInCWD()` | list all notes for a certain file or directory under CWD |
 
-5. Signs
+5. Jump to Note
+
+| Function | Description |
+| --- | --- |
+| `JumpToNextNote()` | jump to next avaiable note in current note |
+
+6. Signs
 
 | Funtion | Description |
 | --- | --- |
