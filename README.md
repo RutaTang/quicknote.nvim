@@ -28,15 +28,15 @@ Still in active development, some APIs may be broken later.
 | `NewNoteAtCWD()` | create a note at current working directory|
 | `NewNoteAtLine(line)`| create a note at a give line|
 | `NewNoteAtCurrentLine()`| create a note at current cursor line|
-| `NewNoteAtGlobal` | create a note can be accessed globally|
+| `NewNoteAtGlobal` | create a note which can be accessed globally|
 
 2. Open note 
 
 | Function | Description |
 | --- | ---|
 | `OpenNoteAtCWD()` | open a note at CWD, you will input the name of the note|
-| `OpenNoteAtLine(line)` | open a note associted with a given line |
-| `OpenNoteAtCurrentLine(line)` | open a note associted with the current cursor line |
+| `OpenNoteAtLine(line)` | open a note associated with a given line |
+| `OpenNoteAtCurrentLine(line)` | open a note associated with the current cursor line |
 | `OpenNoteAtGlobal()` | open a note in global, you will input the name of the note |
 
 3. Delete note
