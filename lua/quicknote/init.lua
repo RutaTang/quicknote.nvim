@@ -44,6 +44,7 @@ return {
     -- Export note
     -- Import note
     -- Clear note in current buffer, cwd, global
+    -- (Optional for now) Make notes portable, located in CWD rather than in data folder
     -- (Optional for now) open web browser to show note (list)
     -- (Optional for now) integrate with telescope
 
