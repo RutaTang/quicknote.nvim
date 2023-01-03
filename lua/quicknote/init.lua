@@ -38,7 +38,6 @@ return {
     ListNotesForGlobal = core.ListNotesForGlobal,
 
     JumpToNextNote = core.JumpToNextNote,
-    -- TODO: not ye implement
     JumpToPreviousNote = core.JumpToPreviousNote,
 
     -- TODO:

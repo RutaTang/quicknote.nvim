@@ -62,6 +62,7 @@ Still in active development, some APIs may be broken later.
 | Function | Description |
 | --- | --- |
 | `JumpToNextNote()` | jump to next avaiable note in current buffer |
+| `JumpToPreviousNote()` | jump to previous avaiable note in current buffer |
 
 6. Signs
 
