@@ -28,7 +28,7 @@ end
 
 -- define sign
 function M.DefineSign()
-    vim.fn.sign_define(SIGN_NAME, { text = "N", texthl = "", linehl = "", numhl = "" })
+    vim.fn.sign_define(SIGN_NAME, { text = "N", texthl = "QuickNote", linehl = "", numhl = "" })
 end
 
 -- get sign display state for a buffer
