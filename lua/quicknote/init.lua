@@ -41,6 +41,7 @@ return {
     JumpToPreviousNote = core.JumpToPreviousNote,
 
     -- TODO:
+    -- Get count of notes
     -- Import note
     -- Clear note in current buffer, cwd, global
     -- (Optional for now) Make notes portable, located in CWD rather than in data folder
