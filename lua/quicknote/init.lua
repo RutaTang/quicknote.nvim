@@ -41,7 +41,6 @@ return {
     JumpToPreviousNote = core.JumpToPreviousNote,
 
     -- TODO:
-    -- Export note
     -- Import note
     -- Clear note in current buffer, cwd, global
     -- (Optional for now) Make notes portable, located in CWD rather than in data folder
@@ -51,4 +50,8 @@ return {
     ShowNoteSigns = core.ShowNoteSigns,
     HideNoteSigns = core.HideNoteSigns,
     ToggleNoteSigns = core.ToggleNoteSigns,
+
+    -- TODO:
+    -- Export note (CWD and Global)
+    ExportNotesForCurrentBuffer = core.ExportNotesForCurrentBuffer,
 }

@@ -68,9 +68,16 @@ Still in active development, some APIs may be broken later.
 
 | Funtion | Description |
 | --- | --- |
-| `ShowNoteSigns` | show signs for current buffer |
-| `HideNoteSigns` | hide signs for current buffer |
-| `ToggleNoteSigns` | toggle signs |
+| `ShowNoteSigns()` | show signs for current buffer |
+| `HideNoteSigns()` | hide signs for current buffer |
+| `ToggleNoteSigns()` | toggle signs |
+
+7. Export notes
+
+| Funtion | Description |
+| --- | --- |
+| `ExportNotesForCurrentBuffer()` | export all notes associated with the current buffer to a destination dir |
+
 
 
 For example, you can use the code below to map a key to one of the function above:
