@@ -46,7 +46,7 @@ Still in active development, some APIs may be broken later.
 | `DeleteNoteAtCWD()` | delete a note at CWD, you will input the name of the note|
 | `DeleteNoteAtLine(line)` | delete a note associated with a given line|
 | `DeleteNoteAtCurrentLine(line)` | delete a note associated with the current cursor line|
-| `DeleteNoteAtGlobal(line)` | delete a note in global, you will input the name of the note |
+| `DeleteNoteAtGlobal()` | delete a note in global, you will input the name of the note |
 
 4. List note
 
