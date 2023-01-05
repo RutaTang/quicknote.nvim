@@ -17,6 +17,7 @@ require("lazy").setup({
 })
 ```
 
+
 ## API
 
 Still in active development, some APIs may be broken later.

@@ -44,7 +44,7 @@ return {
     -- Get count of notes
     -- Import note
     -- Clear note in current buffer, cwd, global
-    -- (Optional for now) Make notes portable, located in CWD rather than in data folder
+    -- (Optional for now) Make notes portable, located in CWD rather than in data folder, and enable temporarily/persistantly swicth between them
     -- (Optional for now) open web browser to show note (list)
     -- (Optional for now) integrate with telescope
 
