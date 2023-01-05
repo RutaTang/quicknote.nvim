@@ -77,6 +77,8 @@ Still in active development, some APIs may be broken later.
 | Funtion | Description |
 | --- | --- |
 | `ExportNotesForCurrentBuffer()` | export all notes associated with the current buffer to a destination dir |
+| `ExportNotesForCWD()` | export all notes associated with CWD, but notes associated with the files under CWD are not exported | 
+| `ExportNotesForGlobal()` | export all notes have been put in global | 
 
 
 
