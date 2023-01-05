@@ -64,7 +64,7 @@ local DeleteNoteAtCWD = function()
     local fileName = vim.fn.input("Enter note name: ")
 
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCurrentCWD()
+    local noteDirPath = utils_path.getNoteDirPathForCWD()
 
     -- get note file path
     local noteFilePath = path:new(noteDirPath, fileName .. ".md").filename

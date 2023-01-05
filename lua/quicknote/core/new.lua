@@ -32,7 +32,7 @@ local NewNoteAtCWDAsync = function()
     local fileName = vim.fn.input("Enter note name: ")
 
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCurrentCWD()
+    local noteDirPath = utils_path.getNoteDirPathForCWD()
 
     -- create note dir (if not exist)
     utils_fs.MKDirAsync(noteDirPath)

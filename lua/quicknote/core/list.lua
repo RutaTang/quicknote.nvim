@@ -48,7 +48,7 @@ M.ListNotesForCurrentBuffer = ListNotesForCurrentBuffer
 -- List all notes for CWD
 local ListNotesForCWD = function()
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCurrentCWD()
+    local noteDirPath = utils_path.getNoteDirPathForCWD()
 
     -- list notes
     listNotes(noteDirPath)

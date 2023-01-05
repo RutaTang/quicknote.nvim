@@ -56,4 +56,5 @@ return {
     -- Export note (CWD and Global)
     ExportNotesForCurrentBuffer = core.ExportNotesForCurrentBuffer,
     ExportNotesForCWD = core.ExportNotesForCWD,
+    ExportNotesForGlobal = core.ExportNotesForGlobal,
 }

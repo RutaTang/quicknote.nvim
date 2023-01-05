@@ -29,7 +29,7 @@ end
 M.getNoteDirPathForCurrentBuffer = getNoteDirPathForCurrentBuffer
 
 -- same as getNoteDirPathForCurrentBuffer but for a CWD instead of the current buffer
-local getNoteDirPathForCurrentCWD = function()
+local getNoteDirPathForCWD = function()
     -- get CWD path
     local cwdPath = vim.fn.getcwd()
 
@@ -38,7 +38,7 @@ local getNoteDirPathForCurrentCWD = function()
 
     return noteDirPath
 end
-M.getNoteDirPathForCurrentCWD = getNoteDirPathForCurrentCWD
+M.getNoteDirPathForCWD = getNoteDirPathForCWD
 
 
 -- same as getNoteDirPath*, but for a global note

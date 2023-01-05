@@ -59,7 +59,22 @@ local ExportNotesForCurrentBuffer = function()
 end
 M.ExportNotesForCurrentBuffer = ExportNotesForCurrentBuffer
 
-local ExportNotesForCWD = function() end
+local ExportNotesForCWD = function()
+    -- get note dir path
+    local noteDirPath = utils_path.getNoteDirPathForCWD()
+
+    -- export notes to destination
+    exportNotesToDestination(noteDirPath)
+end
 M.ExportNotesForCWD = ExportNotesForCWD
+
+local ExportNotesForGlobal = function()
+    -- get note dir path
+    local noteDirPath = utils_path.getNoteDirPathForGlobal()
+
+    -- export notes to destination
+    exportNotesToDestination(noteDirPath)
+end
+M.ExportNotesForGlobal = ExportNotesForGlobal
 
 return M
