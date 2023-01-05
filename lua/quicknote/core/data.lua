@@ -2,9 +2,7 @@
 local utils_path = require("quicknote.utils.path")
 local path = require("plenary.path")
 
-local M = {}
-
-local ExportNotesForCurrentBuffer = function()
+local exportNotesToDestination = function(noteDirPath)
     -- get user input destination dir path
     local destinationDir = vim.fn.input("Enter destination dir path: ")
     vim.cmd([[:redraw]])
@@ -31,9 +29,6 @@ local ExportNotesForCurrentBuffer = function()
         return
     end
 
-    -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCurrentBuffer()
-
     -- get note file paths
     local noteFilePaths = vim.fn.glob(noteDirPath .. "/*.md", true, true)
 
@@ -50,6 +45,21 @@ local ExportNotesForCurrentBuffer = function()
 
     print("Exported successfully.")
 end
+
+-- Exports
+
+local M = {}
+
+local ExportNotesForCurrentBuffer = function()
+    -- get note dir path
+    local noteDirPath = utils_path.getNoteDirPathForCurrentBuffer()
+
+    -- export notes to destination
+    exportNotesToDestination(noteDirPath)
+end
 M.ExportNotesForCurrentBuffer = ExportNotesForCurrentBuffer
+
+local ExportNotesForCWD = function() end
+M.ExportNotesForCWD = ExportNotesForCWD
 
 return M
