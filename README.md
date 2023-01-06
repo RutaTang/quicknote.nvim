@@ -25,7 +25,7 @@ require("lazy").setup({
 - [x] Export notes: export all notes in current buffer, working directory, or global directory to your destination folder.
 - [ ] Import notes: import all notes for current buffer, working directory, or global directory from your external note folder.
 - [x] Signs: signs show you which line is associated with a note.
-- [ ] Portable: currently notes are not portable, which means when you rename your folder/file name, or move to another path, the notes will be deassociated with file/folder, but this will be fixed after protable mode introducted later.
+- [ ] Portable: currently notes are not portable, which means when you rename your folder/file name, or move to another path, the notes will be deassociated with file/folder, but this will be fixed after portable mode introduced later.
 
 ## API
 
