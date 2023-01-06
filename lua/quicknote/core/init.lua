@@ -37,6 +37,6 @@ return {
 
 
     ExportNotesForCurrentBuffer = data.ExportNotesForCurrentBuffer,
-    ExportNotesForCWD = data.ExportNotesForCWD,
     ExportNotesForGlobal = data.ExportNotesForGlobal,
+    ExportNotesForCWD = data.ExportNotesForCWD,
 }

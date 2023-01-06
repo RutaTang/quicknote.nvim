@@ -15,6 +15,14 @@ end
 
 -- Define API
 return {
+    -- TODO:
+    -- Get count of notes
+    -- Import note
+    -- Clear note in current buffer, cwd, global
+    -- (Optional for now) Make notes portable, located in CWD rather than in data folder, and enable temporarily/persistantly swicth between them
+    -- (Optional for now) open web browser to show note (list)
+    -- (Optional for now) integrate with telescope
+
     setup = setup,
 
     NewNoteAtCWD = core.NewNoteAtCWD,
@@ -40,22 +48,14 @@ return {
     JumpToNextNote = core.JumpToNextNote,
     JumpToPreviousNote = core.JumpToPreviousNote,
 
-    -- TODO:
-    -- Get count of notes
-    -- Import note
-    -- Clear note in current buffer, cwd, global
-    -- (Optional for now) Make notes portable, located in CWD rather than in data folder, and enable temporarily/persistantly swicth between them
-    -- (Optional for now) open web browser to show note (list)
-    -- (Optional for now) integrate with telescope
-
     ShowNoteSigns = core.ShowNoteSigns,
     HideNoteSigns = core.HideNoteSigns,
     ToggleNoteSigns = core.ToggleNoteSigns,
 
     -- TODO:
-    -- Export note at current line
-    -- Export note at and under cwd
+    -- (Optional) Export note at current line
+    -- (Optional) Export note at and under cwd
     ExportNotesForCurrentBuffer = core.ExportNotesForCurrentBuffer,
-    ExportNotesForCWD = core.ExportNotesForCWD,
     ExportNotesForGlobal = core.ExportNotesForGlobal,
+    ExportNotesForCWD = core.ExportNotesForCWD,
 }

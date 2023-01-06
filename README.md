@@ -17,6 +17,15 @@ require("lazy").setup({
 })
 ```
 
+## Features
+- [x] In-place notes: taking notes in-place and quickly and let the notes associated with current cursor line, working directory or global directory.  
+- [x] Jump between notes: easily jump between notes in current buffer.
+- [x] List notes: say the notes you have writen.
+- [x] Delete notes: delete notes you do not need quickly and in-place
+- [x] Export notes: export all notes in current buffer, working directory, or global directory to your destination folder.
+- [ ] Import notes: import all notes for current buffer, working directory, or global directory from your external note folder.
+- [x] Signs: signs show you which line is associated with a note.
+- [ ] Portable: currently notes are not portable, which means when you rename your folder/file name, or move to another path, the notes will be deassociated with file/folder, but this will be fixed after protable mode introducted later.
 
 ## API
 
