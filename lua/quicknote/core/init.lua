@@ -5,6 +5,7 @@ local list = require("quicknote.core.list")
 local sign = require("quicknote.core.sign")
 local jump = require("quicknote.core.jump")
 local data = require("quicknote.core.data")
+local count = require("quicknote.core.count")
 
 return {
     NewNoteAtGlobal = new.NewNoteAtGlobal,
@@ -26,6 +27,10 @@ return {
     ListNotesForCWD = list.ListNotesForCWD,
     ListNotesForAFileOrWDInCWD = list.ListNotesForAFileOrWDInCWD,
     ListNotesForCurrentBuffer = list.ListNotesForCurrentBuffer,
+
+    GetNotesCountForCurrentBuffer = count.GetNotesCountForCurrentBuffer,
+    GetNotesCountForCWD = count.GetNotesCountForCWD,
+    GetNotesCountForGlobal = count.GetNotesCountForGlobal,
 
     JumpToNextNote = jump.JumpToNextNote,
     JumpToPreviousNote = jump.JumpToPreviousNote,

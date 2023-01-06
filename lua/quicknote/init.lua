@@ -45,6 +45,10 @@ return {
     ListNotesForAFileOrWDInCWD = core.ListNotesForAFileOrWDInCWD,
     ListNotesForGlobal = core.ListNotesForGlobal,
 
+    GetNotesCountForCurrentBuffer = core.GetNotesCountForCurrentBuffer,
+    GetNotesCountForCWD = core.GetNotesCountForCWD,
+    GetNotesCountForGlobal = core.GetNotesCountForGlobal,
+
     JumpToNextNote = core.JumpToNextNote,
     JumpToPreviousNote = core.JumpToPreviousNote,
 
@@ -58,4 +62,5 @@ return {
     ExportNotesForCurrentBuffer = core.ExportNotesForCurrentBuffer,
     ExportNotesForGlobal = core.ExportNotesForGlobal,
     ExportNotesForCWD = core.ExportNotesForCWD,
+
 }

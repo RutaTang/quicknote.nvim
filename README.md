@@ -67,14 +67,22 @@ Still in active development, some APIs may be broken later.
 | `ListNotesForGlobal()`| list all notes in global |
 | `ListNotesForAFileOrWDInCWD()` | list all notes for a certain file or directory under CWD |
 
-5. Jump to Note
+5. Jump to note
 
 | Function | Description |
 | --- | --- |
 | `JumpToNextNote()` | jump to next avaiable note in current buffer |
 | `JumpToPreviousNote()` | jump to previous avaiable note in current buffer |
 
-6. Signs
+6. Notes count
+
+| Function | Description |
+| --- | ---|
+| `GetNotesCountForCurrentBuffer()` | get notes count for current buffer |
+| `GetNotesCountForCWD()` |  get notes count for CWD |
+| `GetNotesCountForGlobal()`| get notes count for global|
+
+7. Signs
 
 | Funtion | Description |
 | --- | --- |
@@ -82,7 +90,7 @@ Still in active development, some APIs may be broken later.
 | `HideNoteSigns()` | hide signs for current buffer |
 | `ToggleNoteSigns()` | toggle signs |
 
-7. Export notes
+8. Export notes
 
 | Funtion | Description |
 | --- | --- |
