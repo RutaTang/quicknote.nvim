@@ -6,8 +6,13 @@ local sign = require("quicknote.core.sign")
 local jump = require("quicknote.core.jump")
 local data = require("quicknote.core.data")
 local count = require("quicknote.core.count")
+local mode = require("quicknote.core.mode")
 
 return {
+    SwitchToResidentMode = mode.SwitchToResidentMode,
+    SwitchToPortableMode = mode.SwitchToPortableMode,
+    ToggleMode = mode.ToggleMode,
+
     NewNoteAtGlobal = new.NewNoteAtGlobal,
     NewNoteAtCWD = new.NewNoteAtCWD,
     NewNoteAtLine = new.NewNoteAtLine,
@@ -40,8 +45,9 @@ return {
     DefineSign = sign.DefineSign,
     ToggleNoteSigns = sign.ToggleNoteSigns,
 
-
     ExportNotesForCurrentBuffer = data.ExportNotesForCurrentBuffer,
     ExportNotesForGlobal = data.ExportNotesForGlobal,
     ExportNotesForCWD = data.ExportNotesForCWD,
+
+
 }

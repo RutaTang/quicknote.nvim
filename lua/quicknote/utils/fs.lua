@@ -1,8 +1,4 @@
 local async = require("plenary.async")
-local path = require("plenary.path")
-local scan = require("plenary.scandir")
-
-local dataPath = vim.fn.stdpath("state") .. "/quicknote"
 
 -- Export
 local M = {}
@@ -32,8 +28,5 @@ M.CreateFileAsync = function(path)
     end
 end
 
-M.GetDataPath = function()
-    return dataPath
-end
 
 return M

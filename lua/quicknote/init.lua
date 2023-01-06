@@ -1,13 +1,14 @@
 local async = require("plenary.async")
 
 local utils = require("quicknote.utils")
-utils.fs = require("quicknote.utils.fs")
 local core = require("quicknote.core")
 
 local setup = function(config)
+    -- setup config
+    utils.config.setup(config)
     -- init data folder for quick note
     async.run(function()
-        utils.fs.MKDirAsync(utils.fs.GetDataPath())
+        utils.fs.MKDirAsync(utils.path.GetDataPath())
     end, function() end)
     -- Define sign for quicknote
     core.DefineSign()
@@ -23,6 +24,10 @@ return {
     -- (Optional for now) integrate with telescope
 
     setup = setup,
+
+    SwitchToResidentMode = core.SwitchToResidentMode,
+    SwitchToPortableMode = core.SwitchToPortableMode,
+    ToggleMode = core.ToggleMode,
 
     NewNoteAtCWD = core.NewNoteAtCWD,
     NewNoteAtLine = core.NewNoteAtLine,

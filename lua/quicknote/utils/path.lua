@@ -1,12 +1,26 @@
 local path = require("plenary.path")
-local utils_fs = require("quicknote.utils.fs")
+local config = require("quicknote.utils.config")
 local sha = require("quicknote.utils.sha")
 
 local M = {}
 
+-- Get data path of where quicknote root folder will be stored
+-- if mode is "residient" return $XGD_STATE_HOME/quicknote
+-- if mode is "portable" return $PWD/.quicknote
+M.GetDataPath = function()
+    local mode = config.GetMode()
+    if mode == "resident" then
+        return vim.fn.stdpath("data") .. "/quicknote"
+    elseif mode == "portable" then
+        return vim.fn.getcwd() .. "/.quicknote"
+    else
+        error("Invalid mode: " .. mode .. ". Valid modes are: resident, portable")
+    end
+end
+
 local getHashedNoteDirPath = function(filePath)
     -- data path is where note dir is stored
-    local dataPath = utils_fs.GetDataPath()
+    local dataPath = M.GetDataPath()
     -- get hash of note dir path
     local noteDirName = sha.sha1(filePath) -- hash current buffer path
     -- get hashed note dir path
@@ -40,10 +54,9 @@ local getNoteDirPathForCWD = function()
 end
 M.getNoteDirPathForCWD = getNoteDirPathForCWD
 
-
 -- same as getNoteDirPath*, but for a global note
 local getNoteDirPathForGlobal = function()
-    local dataPath = utils_fs.GetDataPath()
+    local dataPath = M.GetDataPath()
     local noteDirName = "global"
     local noteDirPath = path:new(dataPath, noteDirName).filename
 
