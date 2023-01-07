@@ -1,5 +1,5 @@
 local path = require("plenary.path")
-local utils_path = require("quicknote.utils.path")
+local utils = require("quicknote.utils")
 local sign = require("quicknote.core.sign")
 
 -- check if note file exist, if exists, delete it
@@ -23,7 +23,7 @@ local M = {}
 -- Delete an already existed note at a given line for the current buffer
 -- @param line: line number
 local DeleteNoteAtLine = function(line)
-    local noteDirPath = utils_path.getNoteDirPathForCurrentBuffer()
+    local noteDirPath = utils.path.getNoteDirPathForCurrentBuffer()
     -- get note file path
     local noteFilePath = path:new(noteDirPath, line .. ".md").filename
 
@@ -48,7 +48,7 @@ local DeleteNoteAtGlobal = function()
     local fileName = vim.fn.input("Enter note name: ")
 
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForGlobal()
+    local noteDirPath = utils.path.getNoteDirPathForGlobal()
 
     -- get note file path
     local noteFilePath = path:new(noteDirPath, fileName .. ".md").filename
@@ -56,7 +56,13 @@ local DeleteNoteAtGlobal = function()
     -- check if note file exist
     checkAndDeleteNoteFile(noteFilePath)
 end
-M.DeleteNoteAtGlobal = DeleteNoteAtGlobal
+M.DeleteNoteAtGlobal = function()
+    if utils.config.GetMode() ~= "resident" then
+        print("Delete note globally just works in resident mode")
+        return
+    end
+    DeleteNoteAtGlobal()
+end
 
 -- Delete an already existed note at CWD
 local DeleteNoteAtCWD = function()
@@ -64,7 +70,7 @@ local DeleteNoteAtCWD = function()
     local fileName = vim.fn.input("Enter note name: ")
 
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCWD()
+    local noteDirPath = utils.path.getNoteDirPathForCWD()
 
     -- get note file path
     local noteFilePath = path:new(noteDirPath, fileName .. ".md").filename

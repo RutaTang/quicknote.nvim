@@ -1,6 +1,6 @@
 -- default config
 local config = {
-    mode = "portable", -- "resident" or "portable"
+    mode = "resident", -- "resident" or "portable"
 }
 
 -- Export

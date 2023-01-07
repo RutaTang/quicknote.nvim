@@ -1,4 +1,4 @@
-local utils_path = require("quicknote.utils.path")
+local utils= require("quicknote.utils")
 
 local getNotesCount = function(noteDirPath)
     -- check if note dir exist
@@ -29,7 +29,7 @@ local M = {}
 
 local GetNotesCountForCurrentBuffer = function()
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCurrentBuffer()
+    local noteDirPath = utils.path.getNoteDirPathForCurrentBuffer()
 
     getNotesCount(noteDirPath)
 end
@@ -37,18 +37,25 @@ M.GetNotesCountForCurrentBuffer = GetNotesCountForCurrentBuffer
 
 local GetNotesCountForCWD = function()
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCWD()
+    local noteDirPath = utils.path.getNoteDirPathForCWD()
 
     getNotesCount(noteDirPath)
 end
 M.GetNotesCountForCWD = GetNotesCountForCWD
 
-local getNotesCountForGlobal = function()
+local GetNotesCountForGlobal = function()
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForGlobal()
+    local noteDirPath = utils.path.getNoteDirPathForGlobal()
+    print(noteDirPath)
 
     getNotesCount(noteDirPath)
 end
-M.GetNotesCountForGlobal = getNotesCountForGlobal
+M.GetNotesCountForGlobal = function()
+    if utils.config.GetMode() ~= "resident" then
+        print("Get global notes count just works in resident mode")
+        return
+    end
+    GetNotesCountForGlobal()
+end
 
 return M

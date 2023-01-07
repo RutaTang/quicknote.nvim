@@ -10,7 +10,7 @@ local M = {}
 M.GetDataPath = function()
     local mode = config.GetMode()
     if mode == "resident" then
-        return vim.fn.stdpath("data") .. "/quicknote"
+        return vim.fn.stdpath("state") .. "/quicknote"
     elseif mode == "portable" then
         return vim.fn.getcwd() .. "/.quicknote"
     else

@@ -1,5 +1,5 @@
 local path = require("plenary.path")
-local utils_path = require("quicknote.utils.path")
+local utils = require("quicknote.utils")
 
 local M = {}
 
@@ -21,7 +21,7 @@ end
 -- Open an already existed note at a given line for the current buffer
 -- @param line: line number
 local OpenNoteAtLine = function(line)
-    local noteDirPath = utils_path.getNoteDirPathForCurrentBuffer()
+    local noteDirPath = utils.path.getNoteDirPathForCurrentBuffer()
     -- get note file path
     local noteFilePath = path:new(noteDirPath, line .. ".md").filename
     -- check if note file exist
@@ -42,7 +42,7 @@ local OpenNoteAtGlobal = function()
     local fileName = vim.fn.input("Enter note name: ")
 
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForGlobal()
+    local noteDirPath = utils.path.getNoteDirPathForGlobal()
 
     -- get note file path
     local noteFilePath = path:new(noteDirPath, fileName .. ".md").filename
@@ -50,7 +50,13 @@ local OpenNoteAtGlobal = function()
     -- check if note file exist
     checkAndOpenNoteFile(noteFilePath)
 end
-M.OpenNoteAtGlobal = OpenNoteAtGlobal
+M.OpenNoteAtGlobal = function()
+    if utils.config.GetMode() ~= "resident" then
+        print("Open note globally just works in resident mode")
+        return
+    end
+    OpenNoteAtGlobal()
+end
 
 -- Open an already existed note at CWD
 local OpenNoteAtCWD = function()
@@ -58,7 +64,7 @@ local OpenNoteAtCWD = function()
     local fileName = vim.fn.input("Enter note name: ")
 
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCWD()
+    local noteDirPath = utils.path.getNoteDirPathForCWD()
 
     -- get note file path
     local noteFilePath = path:new(noteDirPath, fileName .. ".md").filename

@@ -1,5 +1,5 @@
 -- This module consist of import and export functions for the note data
-local utils_path = require("quicknote.utils.path")
+local utils= require("quicknote.utils")
 local path = require("plenary.path")
 
 local exportNotesToDestination = function(noteDirPath)
@@ -52,7 +52,7 @@ local M = {}
 
 local ExportNotesForCurrentBuffer = function()
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCurrentBuffer()
+    local noteDirPath = utils.path.getNoteDirPathForCurrentBuffer()
 
     -- export notes to destination
     exportNotesToDestination(noteDirPath)
@@ -61,7 +61,7 @@ M.ExportNotesForCurrentBuffer = ExportNotesForCurrentBuffer
 
 local ExportNotesForCWD = function()
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCWD()
+    local noteDirPath = utils.path.getNoteDirPathForCWD()
 
     -- export notes to destination
     exportNotesToDestination(noteDirPath)
@@ -70,12 +70,17 @@ M.ExportNotesForCWD = ExportNotesForCWD
 
 local ExportNotesForGlobal = function()
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForGlobal()
+    local noteDirPath = utils.path.getNoteDirPathForGlobal()
 
     -- export notes to destination
     exportNotesToDestination(noteDirPath)
 end
-M.ExportNotesForGlobal = ExportNotesForGlobal
-
+M.ExportNotesForGlobal = function()
+    if utils.config.GetMode() ~= "resident" then
+        print("Get global notes count just works in resident mode")
+        return
+    end
+    ExportNotesForGlobal()
+end
 
 return M

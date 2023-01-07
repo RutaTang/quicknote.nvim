@@ -1,4 +1,4 @@
-local utils_path = require("quicknote.utils.path")
+local utils= require("quicknote.utils")
 local path = require("plenary.path")
 
 -- list all notes in a note dir
@@ -38,7 +38,7 @@ local M = {}
 -- List all notes for current buffer file
 local ListNotesForCurrentBuffer = function()
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCurrentBuffer()
+    local noteDirPath = utils.path.getNoteDirPathForCurrentBuffer()
 
     -- list notes
     listNotes(noteDirPath)
@@ -48,7 +48,7 @@ M.ListNotesForCurrentBuffer = ListNotesForCurrentBuffer
 -- List all notes for CWD
 local ListNotesForCWD = function()
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForCWD()
+    local noteDirPath = utils.path.getNoteDirPathForCWD()
 
     -- list notes
     listNotes(noteDirPath)
@@ -67,7 +67,7 @@ local ListNotesForAFileOrWDInCWD = function()
     local noteDirPaths = {}
     local existedFilePaths = {}
     for _, filePath in ipairs(filePaths) do
-        local noteDirPath = utils_path.getHashedNoteDirPath(filePath)
+        local noteDirPath = utils.path.getHashedNoteDirPath(filePath)
         local stat = vim.loop.fs_stat(noteDirPath)
         if stat then
             -- list notes
@@ -114,11 +114,17 @@ M.ListNotesForAFileOrWDInCWD = ListNotesForAFileOrWDInCWD
 -- List all notes for global
 local ListNotesForGlobal = function()
     -- get note dir path
-    local noteDirPath = utils_path.getNoteDirPathForGlobal()
+    local noteDirPath = utils.path.getNoteDirPathForGlobal()
 
     -- list notes
     listNotes(noteDirPath)
 end
-M.ListNotesForGlobal = ListNotesForGlobal
+M.ListNotesForGlobal = function()
+    if utils.config.GetMode() ~= "resident" then
+        print("List notes globally just works in resident mode")
+        return
+    end
+    ListNotesForGlobal()
+end
 
 return M
