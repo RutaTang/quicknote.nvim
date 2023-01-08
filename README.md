@@ -47,7 +47,7 @@ Current there is only one config option, but more options might be coming.
 ```lua
 require("lazy").setup({
   { "RutaTang/quicknote.nvim", config={
-    mode = "portable" -- "portable" | "resident", default to "protable"
+    mode = "portable" -- "portable" | "resident", default to "portable"
   }, dependencies = { "nvim-lua/plenary.nvim"} },
 })
 ```
