@@ -9,7 +9,7 @@ A note can be associated with current cursor line, or current working directory,
 ## Installation
 Use any plugin manager you like.
 
-Note: This plugin uses [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim), thus please make sure it is in the dependencies or in your plugin list.
+*Note: This plugin uses [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim), thus please make sure it is in the dependencies or in your plugin list.*
 
 For lazy.nvim (a modern plugin manager for Neovim): 
 
@@ -28,6 +28,9 @@ end)
 ```
 
 ## Features
+
+All main features have alread been implemented. New features may probabily be introduced after fixing potential bugs, optimizing, writing instruction and tutorial.
+
 - [x] In-place notes: taking notes in-place and quickly and let the notes associated with current cursor line, working directory or global directory.  
 - [x] Jump between notes: easily jump between notes in current buffer.
 - [x] List notes: say the notes you have writen.
