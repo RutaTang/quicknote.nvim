@@ -6,7 +6,7 @@ A note can be associated with current cursor line, or current working directory,
 
 ![Showcase](./showcase.gif)
 
-## Instjllation
+## Installation
 Use any plugin manager you like.
 
 *Note: This plugin uses [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim), thus please make sure it is in the dependencies or in your plugin list.*
