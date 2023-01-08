@@ -47,7 +47,7 @@ end)
 1. Open a file.
 2. At a certain line, in Command-line mode, run `:lua require('quicknote').NewNoteAtCurrentLine()`. Now, a note has been created and associated with current cursor line. But you do not say any signs on the left side.
 3. At the same line, in Command-line mode, run `:lua require('quicknote').ShowNoteSigns()`. Now you can say a sign just on the left side at the current cursor line, which shows you that the note you have created is at this line.
-4. At the same line, when you want to reread or edit the note you just created, run `:lua require('quicknot').OpenNoteAtCurrentLine()`. Now, the note will be opend and you can edit. It is just a markdown file.
+4. At the same line, when you want to reread or edit the note you just created, run `:lua require('quicknot').OpenNoteAtCurrentLine()`. Now, the note will be opened and you can edit it. It is just a markdown file.
 
 ### Advanced Usage
 
