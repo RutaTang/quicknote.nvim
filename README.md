@@ -42,7 +42,7 @@ end)
 
 ## Config
 
-Current this is only one config option, but more options might be coming.
+Current there is only one config option, but more options might be coming.
 
 ```lua
 require("lazy").setup({
