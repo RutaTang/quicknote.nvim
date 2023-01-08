@@ -40,6 +40,18 @@ require('packer').startup(function(use)
 end)
 ```
 
+## Config
+
+Current this is only one config option, but more options might be coming.
+
+```lua
+require("lazy").setup({
+  { "RutaTang/quicknote.nvim", config={
+    mode = "portable" -- "portable" | "resident", default to "protable"
+  }, dependencies = { "nvim-lua/plenary.nvim"} },
+})
+```
+
 ## Tutorial
 
 ### Quick Start / Basic Usage
