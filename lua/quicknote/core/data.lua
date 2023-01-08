@@ -77,7 +77,7 @@ local ExportNotesForGlobal = function()
 end
 M.ExportNotesForGlobal = function()
     if utils.config.GetMode() ~= "resident" then
-        print("Get global notes count just works in resident mode")
+        print("Export global notes just works in resident mode")
         return
     end
     ExportNotesForGlobal()
