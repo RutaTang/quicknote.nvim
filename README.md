@@ -98,6 +98,16 @@ Still in active development, some APIs may be broken later.
 | `ExportNotesForCWD()` | export all notes associated with CWD, but notes associated with the files under CWD are not exported | 
 | `ExportNotesForGlobal()` | export all notes that have been put in global | 
 
+9. Swicth Mode
+
+| Funtion | Description |
+| --- | --- |
+| `SwitchToResidentMode()` | swicth to resident mode|
+| `SwitchToPortableMode()` | switch to portable mode|
+| `ToggleMode()` | toggle mode |
+
+
+
 
 
 For example, you can use the code below to map a key to one of the function above:
