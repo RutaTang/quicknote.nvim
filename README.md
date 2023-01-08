@@ -23,7 +23,7 @@ require("lazy").setup({
 - [x] List notes: say the notes you have writen.
 - [x] Delete notes: delete notes you do not need quickly and in-place
 - [x] Export notes: export all notes in current buffer, working directory, or global directory to your destination folder.
-- [ ] Import notes: import all notes for current buffer, working directory, or global directory from your external note folder.
+- [x] Import notes: import all notes for current buffer, working directory, or global directory from your external note folder.
 - [x] Signs: signs show you which line is associated with a note.
 - [x] Portable: notes can be portable, stored at `.quicknote` folder at your CWD
 
@@ -98,7 +98,15 @@ Still in active development, some APIs may be broken later.
 | `ExportNotesForCWD()` | export all notes associated with CWD, but notes associated with the files under CWD are not exported | 
 | `ExportNotesForGlobal()` | export all notes that have been put in global | 
 
-9. Swicth Mode
+9. Import notes
+
+| Funtion | Description |
+| --- | --- |
+| `ImportNotesForCurrentBuffer()` | import notes from external note folder to current buffer |
+| `ImportNotesForCWD()` | import notes from external note folder to CWD |
+| `ImportNotesForGlobal()` | import notes from external note folder to global |
+
+10. Swicth Mode
 
 | Funtion | Description |
 | --- | --- |

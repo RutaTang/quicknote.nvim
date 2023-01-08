@@ -1,6 +1,7 @@
 -- This module consist of import and export functions for the note data
 local utils = require("quicknote.utils")
 local path = require("plenary.path")
+local sign = require("quicknote.core.sign")
 
 local exportNotesToDestination = function(noteDirPath)
     -- get user input destination dir path
@@ -133,6 +134,34 @@ local ImportNotesForCurrentBuffer = function()
     -- import notes from external source dir
     importNotesFromDestination(noteDirPath)
 end
-M.ImportNotesForCurrentBuffer = ImportNotesForCurrentBuffer
+M.ImportNotesForCurrentBuffer = function ()
+    ImportNotesForCurrentBuffer()
+    -- refresh signs
+    sign.ReShowSignsForCurrentBuffer()
+end
+
+local ImportNotesForCWD = function()
+    -- get note dir path
+    local noteDirPath = utils.path.getNoteDirPathForCWD()
+
+    -- import notes from external source dir
+    importNotesFromDestination(noteDirPath)
+end
+M.ImportNotesForCWD = ImportNotesForCWD
+
+local ImportNotesForGlobal = function()
+    -- get note dir path
+    local noteDirPath = utils.path.getNoteDirPathForGlobal()
+
+    -- import notes from external source dir
+    importNotesFromDestination(noteDirPath)
+end
+M.ImportNotesForGlobal = function()
+    if utils.config.GetMode() ~= "resident" then
+        print("Import global notes just works in resident mode")
+        return
+    end
+    ImportNotesForGlobal()
+end
 
 return M
