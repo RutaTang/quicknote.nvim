@@ -61,10 +61,11 @@ return {
     ToggleNoteSigns = core.ToggleNoteSigns,
 
     -- TODO:
-    -- (Optional) Export note at current line
     -- (Optional) Export note at and under cwd
     ExportNotesForCurrentBuffer = core.ExportNotesForCurrentBuffer,
     ExportNotesForGlobal = core.ExportNotesForGlobal,
     ExportNotesForCWD = core.ExportNotesForCWD,
+
+    ImportNotesForCurrentBuffer = core.ImportNotesForCurrentBuffer,
 
 }

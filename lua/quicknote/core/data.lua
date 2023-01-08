@@ -1,5 +1,5 @@
 -- This module consist of import and export functions for the note data
-local utils= require("quicknote.utils")
+local utils = require("quicknote.utils")
 local path = require("plenary.path")
 
 local exportNotesToDestination = function(noteDirPath)
@@ -46,6 +46,49 @@ local exportNotesToDestination = function(noteDirPath)
     print("Exported successfully.")
 end
 
+local importNotesFromDestination = function(noteDirPath)
+    -- create note dir if not exists
+    path.new(noteDirPath):mkdir({ parents = true })
+
+    -- get user input external notes source dir path
+    local sourceDir = vim.fn.input("Enter external source dir path: ")
+    vim.cmd([[:redraw]])
+    if sourceDir == "" then
+        print("No external source dir path provided")
+        return
+    end
+
+    -- make path absolute
+    sourceDir = path.new(sourceDir):absolute()
+
+    -- check if source dir exists, if not exist, do nothing and return
+    local stat = vim.loop.fs_stat(sourceDir)
+    if stat == nil then
+        print("Source dir does not exist")
+        return
+    end
+
+    -- get note file paths from source dir
+    local sourceNoteFilePaths = vim.fn.glob(sourceDir .. "/*.md", true, true)
+    if sourceNoteFilePaths == nil or #sourceNoteFilePaths == 0 then
+        print("Source dir has no notes inside")
+        return
+    end
+
+    -- copy note files from external source dir to the internal note dir
+    for _, sourceNoteFilePath in ipairs(sourceNoteFilePaths) do
+        --get note file name with extention
+        local sourceNoteFileName = path.new(sourceNoteFilePath):_split()
+        sourceNoteFileName = sourceNoteFileName[#sourceNoteFileName]
+
+        local destinationFilePath = path.new(noteDirPath):joinpath(sourceNoteFileName)
+
+        path.new(sourceNoteFilePath):copy({ destination = destinationFilePath })
+    end
+
+    print("Imported successfully.")
+end
+
 -- Exports
 
 local M = {}
@@ -82,5 +125,14 @@ M.ExportNotesForGlobal = function()
     end
     ExportNotesForGlobal()
 end
+
+local ImportNotesForCurrentBuffer = function()
+    -- get note dir path
+    local noteDirPath = utils.path.getNoteDirPathForCurrentBuffer()
+
+    -- import notes from external source dir
+    importNotesFromDestination(noteDirPath)
+end
+M.ImportNotesForCurrentBuffer = ImportNotesForCurrentBuffer
 
 return M
