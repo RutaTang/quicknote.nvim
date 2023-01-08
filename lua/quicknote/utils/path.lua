@@ -22,6 +22,9 @@ local getHashedNoteDirPath = function(filePath)
     -- data path is where note dir is stored
     local dataPath = M.GetDataPath()
     -- get hash of note dir path
+    if config.GetMode() == "portable" then
+        filePath = path:new(filePath):make_relative()
+    end
     local noteDirName = sha.sha1(filePath) -- hash current buffer path
     -- get hashed note dir path
     local noteDirPath = path:new(dataPath, noteDirName).filename
