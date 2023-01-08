@@ -9,12 +9,22 @@ A note can be associated with current cursor line, or current working directory,
 ## Installation
 Use any plugin manager you like.
 
-Like, for lazy.nvim (a modern plugin manager for Neovim): 
+Note: This plugin uses [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim), thus please make sure it is in the dependencies or in your plugin list.
+
+For lazy.nvim (a modern plugin manager for Neovim): 
 
 ```lua
 require("lazy").setup({
   { "RutaTang/quicknote.nvim", config={}, dependencies = { "nvim-lua/plenary.nvim"} },
 })
+```
+
+For packer.nvim:
+
+```lua
+require('packer').startup(function(use)
+    use { "RutaTang/quicknote.nvim", requires={"nvim-lua/plenary.nvim"}, config = function() require('quicknote').setup{} end }
+end)
 ```
 
 ## Features
