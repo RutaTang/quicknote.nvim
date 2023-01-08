@@ -6,7 +6,7 @@ A note can be associated with current cursor line, or current working directory,
 
 ![Showcase](./showcase.gif)
 
-## Installation
+## Instjllation
 Use any plugin manager you like.
 
 *Note: This plugin uses [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim), thus please make sure it is in the dependencies or in your plugin list.*
@@ -29,7 +29,7 @@ end)
 
 ## Features
 
-All main features have alread been implemented. New features may probabily be introduced after fixing potential bugs, optimizing, writing instruction and tutorial.
+All main features have already been implemented. New features may probabily be introduced after fixing potential bugs, optimizing, and writing instruction/tutorial.
 
 - [x] In-place notes: taking notes in-place and quickly and let the notes associated with current cursor line, working directory or global directory.  
 - [x] Jump between notes: easily jump between notes in current buffer.
@@ -42,7 +42,7 @@ All main features have alread been implemented. New features may probabily be in
 
 ## API
 
-Still in active development, some APIs may be broken later.
+I do not want to break any APIs when you are using this plugin, but it is still possible if some APIs are not rational or potential bugs force them to be changed. I may use semantic versioning later to avoid breaking APIs in the major version.
 
 1. New note
 
