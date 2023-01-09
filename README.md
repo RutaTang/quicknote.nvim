@@ -1,8 +1,8 @@
 # Quick Note
 
-<p class="center">
-<a href="./i18n/zh.md">简体中文</a>
-<a href="./i18n/fr.md">Français</a>
+<p align="center">
+<a href="./i18n/zh.md">[简体中文]</a>
+<a href="./i18n/fr.md">[Français]</a>
 </p>
 
 This is a note taking plugin for Neovim, aiming to help you quickly create, delete, read, and edit notes.
