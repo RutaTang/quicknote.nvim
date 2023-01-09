@@ -65,7 +65,9 @@ require("lazy").setup({
 
 #### 1. How quicknote.nvim works ?
 
-Whenever you create a note associated to the current cursor line, CWD or global, a folder named by the hashed path of current buffer or CWD will be created and I call it "Note Directory" which will store all your notes associated with a certain buffer, CWD or global (Global note directory is not hashed and just named as "global"). For example, when you create a note at line 2 in a file named "hello_world.lua", you will have a "Note Directory" created at "Data Path" (in "resident" mode, it is `vim.fn.stdpath("state") .. "/quicknote"`; in "portable" mode, it is ".quicknote" at root of your CWD) and in the "Data Path", you will see a folder with hashed name, and if you open it, you will see "2.md" which is the note you have just created for this file and "2" means it is associated with line 2.
+Whenever you create a note associated to the current cursor line, CWD or global, a folder named by the hashed path of current buffer or CWD will be created and I call it "Note Directory" which will store all your notes associated with a certain buffer, CWD or global (Global note directory is not hashed and just named as "global").
+
+For example, when you create a note at line 2 in a file named `hello_world.lua`, you will have a "Note Directory" created at "Data Path" (in "resident" mode, it is `vim.fn.stdpath("state") .. "/quicknote"`; in "portable" mode, it is ".quicknote" at root of your CWD). In the "Data Path", you will see a folder with hashed name, and if you open it, you will see "2.md" which is the note you have just created for this file and "2" means it is associated with line 2.
 
 #### 2. Resident mode vs Protable mode
 
