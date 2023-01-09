@@ -2,6 +2,9 @@
 
 <p align="center">
 <a href="./i18n/zh.md">[简体中文]</a>
+&nbsp;
+&nbsp;
+&nbsp;
 <a href="./i18n/fr.md">[Français]</a>
 </p>
 
