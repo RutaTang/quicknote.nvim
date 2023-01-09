@@ -2,11 +2,17 @@
 
 <p align="center">
 <a href="./i18n/zh.md">[简体中文]</a>
-&nbsp;
-&nbsp;
-&nbsp;
 <a href="./i18n/fr.md">[Français]</a>
 </p>
+
+<p align="center">
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/RutaTang/quicknote.nvim">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/RutaTang/quicknote.nvim">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/RutaTang/quicknote.nvim">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/RutaTang/quicknote.nvim">
+<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/RutaTang/quicknote.nvim">
+</p>
+
 
 This is a note taking plugin for Neovim, aiming to help you quickly create, delete, read, and edit notes.
 
