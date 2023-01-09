@@ -63,6 +63,20 @@ require("lazy").setup({
 
 ### Advanced Usage
 
+#### 1. How quicknote.nvim works ?
+
+Whenever you create a note associated to the current cursor line, CWD or global, a folder named by the hashed path of current buffer or CWD will be created and I call it "Note Directory" which will store all your notes associated with a certain buffer, CWD or global (Global note directory is not hashed and just named as "global"). For example, when you create a note at line 2 in a file named "hello_world.lua", you will have a "Note Directory" created at "Data Path" (in "resident" mode, it is `vim.fn.stdpath("state") .. "/quicknote"`; in "portable" mode, it is ".quicknote" at root of your CWD) and in the "Data Path", you will see a folder with hashed name, and if you open it, you will see "2.md" which is the note you have just created for this file and "2" means it is associated with line 2.
+
+#### 2. Resident mode vs Protable mode
+
+There are two modes in quicknote.nvim, "resident" mode and "protable" mode. They are almost similary. The big difference are:
+
+1. In resident mode, you can use API ended with `Global` and notes stored globally can be accessed whenever you use Neovim, even if you are not at working directory at which you created your note.  In portable note, you can not use API ended with `Global`.
+2. In resident mode, all notes regardless of whether they are associated with files, CWD or global will be put in `$XDG_STATE_PATH` and will never pollute your project. But in portable mode, since notes will be located in the `.quicknote` folder in your CWD, it may pollute your project.
+2. In resident mode, the notes you have created will be hard to transfer to another computer. And if you move project which have notes associated with it to another directory, all notes associated with it will be lost. But in protable note, you can transfer your project from one path to another or from one computer to another without worrying about lossing notes. You can even share the project with notes to your colleague or friends who use Neovim and this plugin. They will be able to see the notes you created.
+
+#### 3. Example
+
 TODO
 
 ## API
