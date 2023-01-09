@@ -175,4 +175,3 @@ vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>:lua require('quicknote').NewNot
 
 
 
-
