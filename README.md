@@ -24,14 +24,14 @@ A note can be associated with current cursor line, or current working directory,
 
 🎉 **All main features have already been implemented**. New features may probabily be introduced after fixing potential bugs, optimizing, and writing instruction/tutorial.
 
-- [x] In-place notes: taking notes in-place and quickly and let the notes associated with current cursor line, working directory or global directory.  
+- [x] In-place notes: no worrying about jumpping out of current workflow to take notes or managing the notes tediously. Just take notes in-place and make the notes associate with current cursor line, working directory or global directory.  
 - [x] Jump between notes: easily jump between notes in current buffer.
-- [x] List notes: say the notes you have writen.
+- [x] List notes: list the notes you have writen.
 - [x] Delete notes: delete notes you do not need quickly and in-place
 - [x] Export notes: export all notes in current buffer, working directory, or global directory to your destination folder.
 - [x] Import notes: import all notes for current buffer, working directory, or global directory from your external note folder.
 - [x] Signs: signs show you which line is associated with a note.
-- [x] Portable: notes can be portable, stored at `.quicknote` folder at your CWD
+- [x] Portable: notes can be portable, stored at `.quicknote` folder at your CWD.
 
 ## Installation
 Use any plugin manager you like.
