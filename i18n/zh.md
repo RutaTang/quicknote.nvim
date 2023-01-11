@@ -21,4 +21,41 @@
 
 ## 安装
 
-TODO
+使用任何你喜欢的 plugin manager 。
+
+*注意：本插件使用了 [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim), 所以请确保它在你的插件依赖项中，或在你的插件列表中。*
+
+比如 lazy.nvim:
+
+```lua
+require("lazy").setup({
+  { "RutaTang/quicknote.nvim", config={}, dependencies = { "nvim-lua/plenary.nvim"} },
+})
+```
+
+或 packer.nvim:
+
+```lua
+require('packer').startup(function(use)
+    use { "RutaTang/quicknote.nvim", requires={"nvim-lua/plenary.nvim"}, config = function() require('quicknote').setup{} end }
+end)
+```
+
+## 配置
+
+当前只有一个可选配置项，但是在之后的更新中，可能有更多的配置项可选。
+
+```lua
+require("lazy").setup({
+  { "RutaTang/quicknote.nvim", config={
+    mode = "portable" -- "portable" | "resident", 默认 "portable"
+  }, dependencies = { "nvim-lua/plenary.nvim"} },
+})
+```
+
+## 教程
+
+### 快速开始 / 基本使用
+
+
+### 进阶使用
