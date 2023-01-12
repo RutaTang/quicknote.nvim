@@ -22,7 +22,7 @@ A note can be associated with current cursor line, or current working directory,
 
 ## Features
 
-🎉 **All main features have already been implemented**. New features may probabily be introduced after fixing potential bugs, optimizing, and writing instruction/tutorial.
+🎉 **All main features have already been implemented.** New features may probabily be introduced after fixing potential bugs, optimizing, and writing instruction/tutorial.
 
 - [x] In-place notes: no worrying about jumpping out of current workflow to take notes or managing the notes tediously. Just take notes in-place and make the notes associate with current cursor line, working directory or global directory.  
 - [x] Jump between notes: easily jump between notes in current buffer.
