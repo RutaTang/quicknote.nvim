@@ -56,6 +56,10 @@ require("lazy").setup({
 ## 教程
 
 ### 快速开始 / 基本使用
+1. 打开一个文件
+2. 在某一行，运行 `:lua requrie('quicknote').NewNoteAtCurrentLine()`。现在一个笔记就会被创建并关联到当前行。但是此时你还无法看到左侧显示的sign。
+3. 在同一行，运行 `:lua require('quicknote').ShowNoteSigns()`。 现在就可以在左侧栏看到sign了。它代表你当前行有关联的笔记。
+4. 还是在同一行，运行 `:lua require('quicknote').OpenNoteAtCurrentLine()`。这样，当前行所关联的笔记就会被打开，你可以查看和编辑你的笔记了。
 
 
 ### 进阶使用
