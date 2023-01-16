@@ -16,4 +16,5 @@ Une note peut être associée avec la ligne du curseur courant, répertoire du t
 - [x] Le prenant des notes en place: ne vous inquiétez pas de sortir du flux de travail actuel pour prendre des notes ou de gérer les notes fastidieusement. Prenez simplement des notes en place et associez-les à la ligne de curseur actuelle, au répertoire de travail ou au répertoire global.
 - [x] Sautez entre des notes: sautez facilement entre des notes dans le tampon actuel.
 - [x] Listez des notes: listez des notes que vous avez écrites.
+- [x] Supprimez des notes: supprimez des notes dont vous n’avez pas besoin vite et en place.
 
