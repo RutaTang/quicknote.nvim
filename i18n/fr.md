@@ -17,4 +17,5 @@ Une note peut être associée avec la ligne du curseur courant, répertoire du t
 - [x] Sautez entre des notes: sautez facilement entre des notes dans le tampon actuel.
 - [x] Listez des notes: listez des notes que vous avez écrites.
 - [x] Supprimez des notes: supprimez des notes dont vous n’avez pas besoin vite et en place.
-
+- [x] Exportez des notes: exportez facilement toute note que vous avez créée.
+- [x] Importez des notes: importez facilement toute note à partir de sources externes.
