@@ -19,3 +19,4 @@ Une note peut être associée avec la ligne du curseur courant, répertoire du t
 - [x] Supprimez des notes: supprimez des notes dont vous n’avez pas besoin vite et en place.
 - [x] Exportez des notes: exportez facilement toute note que vous avez créée.
 - [x] Importez des notes: importez facilement toute note à partir de sources externes.
+- [x] Signes: les signes vous montrent quelle ligne est associée à une note.
