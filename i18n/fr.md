@@ -20,3 +20,4 @@ Une note peut être associée avec la ligne du curseur courant, répertoire du t
 - [x] Exportez des notes: exportez facilement toute note que vous avez créée.
 - [x] Importez des notes: importez facilement toute note à partir de sources externes.
 - [x] Signes: les signes vous montrent quelle ligne est associée à une note.
+- [x] Portatif: des notes peuvent être portables, stockées dans le dossier appelé «.quicknote» dans votre répertoire de travail courant.
