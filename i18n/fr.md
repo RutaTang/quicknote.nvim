@@ -21,3 +21,25 @@ Une note peut être associée avec la ligne du curseur courant, répertoire du t
 - [x] Importez des notes: importez facilement toute note à partir de sources externes.
 - [x] Signes: les signes vous montrent quelle ligne est associée à une note.
 - [x] Portatif: des notes peuvent être portables, stockées dans le dossier appelé «.quicknote» dans votre répertoire de travail courant.
+
+## Installation
+
+Utilisez n’importe quel gestionnaire de plugins que vous aimez.
+
+*Remarque: Ce plugin utilise le [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim), alors assurez qu’il est dans les dépendances ou dans votre liste de plugin.*
+
+Pour lazy.nvim (le plugin gestionnaire moderne pour Neovim):
+
+```lua
+require("lazy").setup({
+  { "RutaTang/quicknote.nvim", config={}, dependencies = { "nvim-lua/plenary.nvim"} },
+})
+```
+
+Pour packer.nvim
+
+```lua
+require('packer').startup(function(use)
+    use { "RutaTang/quicknote.nvim", requires={"nvim-lua/plenary.nvim"}, config = function() require('quicknote').setup{} end }
+end)
+```
