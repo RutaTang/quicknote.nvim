@@ -56,3 +56,11 @@ require("lazy").setup({
 })
 ```
 
+## Tutoriel
+
+### Démarrage rapide / Utilisation de base
+
+1. Ouvrir un fichier.
+2. À une certaine ligne, en mode ligne de commande, exécutez :lua require('quicknote').NewNoteAtCurrentLine(). Maintenant, une note a été créée et associée à la ligne du curseur actuel. Mais vous ne voyez pas encore de signes sur le côté gauche.
+3. À la même ligne, en mode ligne de commande, exécutez :lua require('quicknote').ShowNoteSigns(). Maintenant, vous pouvez voir un signe juste sur le côté gauche de la ligne du curseur actuel, qui indique que la note que vous avez créée est à cette ligne.
+4. À la même ligne, lorsque vous voulez relire ou modifier la note que vous venez de créer, exécutez :lua require('quicknote').OpenNoteAtCurrentLine(). Maintenant, la note sera ouverte et vous pourrez la modifier. C'est simplement un fichier markdown.
