@@ -1,6 +1,5 @@
 # Quick Note
 
-<img alt="Logo" src="./asset/qn_logo.png">
 
 <p align="center">
 <a href="./i18n/zh.md">[简体中文]</a>
