@@ -64,3 +64,11 @@ require("lazy").setup({
 2. À une certaine ligne, en mode ligne de commande, exécutez :lua require('quicknote').NewNoteAtCurrentLine(). Maintenant, une note a été créée et associée à la ligne du curseur actuel. Mais vous ne voyez pas encore de signes sur le côté gauche.
 3. À la même ligne, en mode ligne de commande, exécutez :lua require('quicknote').ShowNoteSigns(). Maintenant, vous pouvez voir un signe juste sur le côté gauche de la ligne du curseur actuel, qui indique que la note que vous avez créée est à cette ligne.
 4. À la même ligne, lorsque vous voulez relire ou modifier la note que vous venez de créer, exécutez :lua require('quicknote').OpenNoteAtCurrentLine(). Maintenant, la note sera ouverte et vous pourrez la modifier. C'est simplement un fichier markdown.
+
+### Utilisation avancée
+
+#### 1. Comment fonctionne quicknote.nvim ?
+
+Chaque fois que vous créez une note associée à la ligne de curseur actuelle, au CWD (répertoire de travail courant) ou globale, un dossier nommé d'après le chemin haché du tampon actuel ou du CWD sera créé et je l'appelle "Répertoire de notes" qui stockera toutes vos notes associées à un certain tampon, CWD ou global (Le répertoire de notes global n'est pas haché et est simplement nommé "global").
+
+Par exemple, lorsque vous créez une note à la ligne 2 dans un fichier nommé `hello_world.lua`, vous aurez un "Répertoire de notes" créé au "Chemin des données" (en mode "résident", il s'agit de `vim.fn.stdpath("state") .. "/quicknote"` ; en mode "portable", il s'agit de ".quicknote" à la racine de votre CWD). Dans le "Chemin des données", vous verrez un dossier au nom haché, et si vous l'ouvrez, vous verrez "2.md" qui est la note que vous venez de créer pour ce fichier et "2" signifie qu'elle est associée à la ligne 2.
