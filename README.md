@@ -1,5 +1,7 @@
 # Quick Note
 
+<img alt="Logo" src="./asset/logo.png" style="border-radius: 5px;">
+
 <p align="center">
 <a href="./i18n/zh.md">[简体中文]</a>
 <a href="./i18n/fr.md">[Français]</a>
