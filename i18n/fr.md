@@ -72,3 +72,12 @@ require("lazy").setup({
 Chaque fois que vous créez une note associée à la ligne de curseur actuelle, au CWD (répertoire de travail courant) ou globale, un dossier nommé d'après le chemin haché du tampon actuel ou du CWD sera créé et je l'appelle "Répertoire de notes" qui stockera toutes vos notes associées à un certain tampon, CWD ou global (Le répertoire de notes global n'est pas haché et est simplement nommé "global").
 
 Par exemple, lorsque vous créez une note à la ligne 2 dans un fichier nommé `hello_world.lua`, vous aurez un "Répertoire de notes" créé au "Chemin des données" (en mode "résident", il s'agit de `vim.fn.stdpath("state") .. "/quicknote"` ; en mode "portable", il s'agit de ".quicknote" à la racine de votre CWD). Dans le "Chemin des données", vous verrez un dossier au nom haché, et si vous l'ouvrez, vous verrez "2.md" qui est la note que vous venez de créer pour ce fichier et "2" signifie qu'elle est associée à la ligne 2.
+
+#### 2. Mode résident vs Mode portable
+
+Il y a deux modes dans quicknote.nvim, le mode "résident" et le mode "portable". Ils sont presque similaires. Les grandes différences sont :
+
+1. **`API Global`** : en mode résident, vous pouvez utiliser l'API se terminant par `Global` et les notes stockées globalement peuvent être accessibles chaque fois que vous utilisez Neovim, même si vous n'êtes pas dans le répertoire de travail où vous avez créé vos notes. Dans le mode portable, vous ne pouvez pas utiliser l'API se terminant par `Global`.
+2. **Pollution ou non** : En mode résident, toutes les notes, qu'elles soient associées à des fichiers, CWD ou globales, seront placées dans `$XDG_STATE_PATH et ne pollueront jamais votre projet. Mais en mode portable, puisque les notes seront situées dans le dossier `.quicknote` de votre CWD, cela peut polluer votre projet si vous considérez cela comme une "pollution".
+3. **Portable ou non** : En mode résident, les notes que vous avez créées seront difficiles à transférer vers un autre ordinateur. Et si vous déplacez un projet qui a des notes associées vers un autre ordinateur ou même un autre répertoire, toutes les notes associées seront perdues. Mais en mode portable, vous pouvez transférer votre projet d'un chemin à un autre ou d'un ordinateur à un autre sans vous soucier de perdre des notes. Vous pouvez même partager le projet avec des notes à vos collègues ou amis qui utilisent Neovim et ce plugin. Ils pourront voir les notes que vous avez créées.
+
