@@ -81,3 +81,35 @@ Il y a deux modes dans quicknote.nvim, le mode "résident" et le mode "portable"
 2. **Pollution ou non** : En mode résident, toutes les notes, qu'elles soient associées à des fichiers, CWD ou globales, seront placées dans `$XDG_STATE_PATH et ne pollueront jamais votre projet. Mais en mode portable, puisque les notes seront situées dans le dossier `.quicknote` de votre CWD, cela peut polluer votre projet si vous considérez cela comme une "pollution".
 3. **Portable ou non** : En mode résident, les notes que vous avez créées seront difficiles à transférer vers un autre ordinateur. Et si vous déplacez un projet qui a des notes associées vers un autre ordinateur ou même un autre répertoire, toutes les notes associées seront perdues. Mais en mode portable, vous pouvez transférer votre projet d'un chemin à un autre ou d'un ordinateur à un autre sans vous soucier de perdre des notes. Vous pouvez même partager le projet avec des notes à vos collègues ou amis qui utilisent Neovim et ce plugin. Ils pourront voir les notes que vous avez créées.
 
+
+## API
+
+Je ne veux pas casser les APIs lorsque vous utilisez ce plugin, mais cela reste possible si certaines APIs ne sont pas rationnelles ou si des bogues potentiels les obligent à être modifiées. Je pourrais utiliser la version sémantique plus tard pour éviter de casser les APIs dans la version majeure.
+
+1. Nouvelle note
+
+| Fonction | Description |
+| --- | ---|
+| `NewNoteAtCWD()` | créer une note dans le répertoire de travail actuel |
+| `NewNoteAtLine(line)`| créer une note à une ligne donnée |
+| `NewNoteAtCurrentLine()`| créer une note à la ligne du curseur actuel |
+| `NewNoteAtGlobal` | créer une note accessible globalement |
+
+2. Ouvrir une note
+
+| Fonction | Description |
+| --- | ---|
+| `OpenNoteAtCWD()` | ouvrir une note dans le répertoire de travail actuel, vous saisirez le nom de la note |
+| `OpenNoteAtLine(line)` | ouvrir une note associée à une ligne donnée |
+| `OpenNoteAtCurrentLine(line)` | ouvrir une note associée à la ligne du curseur actuel |
+| `OpenNoteAtGlobal()` | ouvrir une note globalement, vous saisirez le nom de la note |
+
+3. Supprimer une note
+
+| Fonction | Description |
+| --- | ---|
+| `DeleteNoteAtCWD()` | supprimer une note dans le répertoire de travail actuel, vous saisirez le nom de la note |
+| `DeleteNoteAtLine(line)` | supprimer une note associée à une ligne donnée |
+| `DeleteNoteAtCurrentLine(line)` | supprimer une note associée à la ligne du curseur actuel |
+| `DeleteNoteAtGlobal()` | supprimer une note globalement, vous saisirez le nom de la note |
+
