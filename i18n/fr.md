@@ -113,3 +113,18 @@ Je ne veux pas casser les APIs lorsque vous utilisez ce plugin, mais cela reste 
 | `DeleteNoteAtCurrentLine(line)` | supprimer une note associée à la ligne du curseur actuel |
 | `DeleteNoteAtGlobal()` | supprimer une note globalement, vous saisirez le nom de la note |
 
+4. Note de liste
+
+| Fonction | Description |
+| --- | --- |
+| `ListNotesForCurrentBuffer()` | liste toutes les notes associées au tampon actuel |
+| `ListNotesForCWD()` | liste toutes les notes créées dans le CWD |
+| `ListNotesForGlobal()`| liste toutes les notes globales |
+| `ListNotesForAFileOrWDInCWD()` | liste toutes les notes pour un certain fichier ou répertoire sous CWD |
+
+5. Aller à la note
+
+| Fonction | Description |
+| --- | --- |
+| `JumpToNextNote()` | aller à la note suivante disponible dans le tampon actuel |
+| `JumpToPreviousNote()` | aller à la note précédente disponible dans le tampon actuel |
