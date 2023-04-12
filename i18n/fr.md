@@ -128,3 +128,11 @@ Je ne veux pas casser les APIs lorsque vous utilisez ce plugin, mais cela reste 
 | --- | --- |
 | `JumpToNextNote()` | aller à la note suivante disponible dans le tampon actuel |
 | `JumpToPreviousNote()` | aller à la note précédente disponible dans le tampon actuel |
+
+6. Comptage des notes
+
+| Fonction | Description |
+| --- | ---|
+| `GetNotesCountForCurrentBuffer()` | obtenir le nombre de notes pour le tampon actuel |
+| `GetNotesCountForCWD()` |  obtenir le nombre de notes pour le répertoire de travail actuel |
+| `GetNotesCountForGlobal()`| obtenir le nombre de notes pour le global|
