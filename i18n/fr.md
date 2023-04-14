@@ -136,3 +136,20 @@ Je ne veux pas casser les APIs lorsque vous utilisez ce plugin, mais cela reste 
 | `GetNotesCountForCurrentBuffer()` | obtenir le nombre de notes pour le tampon actuel |
 | `GetNotesCountForCWD()` |  obtenir le nombre de notes pour le répertoire de travail actuel |
 | `GetNotesCountForGlobal()`| obtenir le nombre de notes pour le global|
+
+7. Signes
+
+| Fonction | Description |
+| --- | --- |
+| `ShowNoteSigns()` | afficher les signes pour le tampon actuel |
+| `HideNoteSigns()` | masquer les signes pour le tampon actuel |
+| `ToggleNoteSigns()` | basculer les signes |
+
+8. Exporter les notes
+
+| Fonction | Description |
+| --- | --- |
+| `ExportNotesForCurrentBuffer()` | exporter toutes les notes associées au tampon actuel vers un répertoire de destination |
+| `ExportNotesForCWD()` | exporter toutes les notes associées au CWD, mais les notes associées aux fichiers sous CWD ne sont pas exportées |
+| `ExportNotesForGlobal()` | exporter toutes les notes qui ont été mises en global |
+
