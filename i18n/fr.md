@@ -153,3 +153,28 @@ Je ne veux pas casser les APIs lorsque vous utilisez ce plugin, mais cela reste 
 | `ExportNotesForCWD()` | exporter toutes les notes associées au CWD, mais les notes associées aux fichiers sous CWD ne sont pas exportées |
 | `ExportNotesForGlobal()` | exporter toutes les notes qui ont été mises en global |
 
+9. Importer des notes
+
+| Fonction | Description |
+| --- | --- |
+| `ImportNotesForCurrentBuffer()` | importer des notes depuis un dossier de notes externe vers le tampon actuel |
+| `ImportNotesForCWD()` | importer des notes depuis un dossier de notes externe vers le répertoire de travail actuel |
+| `ImportNotesForGlobal()` | importer des notes depuis un dossier de notes externe vers le global |
+
+10. Changer de mode
+
+| Fonction | Description |
+| --- | --- |
+| `SwitchToResidentMode()` | passer en mode résident |
+| `SwitchToPortableMode()` | passer en mode portable |
+| `ToggleMode()` | basculer entre les modes |
+
+
+
+
+
+Par example, vous pouvez utiliser le code ci-dessous pour associer une touche à l'une des fonctions ci-dessus :
+```lua
+vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>:lua require('quicknote').NewNoteAtCurrentLine()<cr>",{})
+```
+

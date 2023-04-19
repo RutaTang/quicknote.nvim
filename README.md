@@ -171,7 +171,7 @@ I do not want to break any APIs when you are using this plugin, but it is still 
 | `ImportNotesForCWD()` | import notes from external note folder to CWD |
 | `ImportNotesForGlobal()` | import notes from external note folder to global |
 
-10. Swicth Mode
+10. Switch Mode
 
 | Funtion | Description |
 | --- | --- |
