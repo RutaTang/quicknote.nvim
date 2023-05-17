@@ -6,8 +6,10 @@ Ceci est un plugiciel de prise de note pour « Neovim », visant à vous aid
 
 Une note peut être associée avec la ligne du curseur courant, répertoire du travail courant, ou peut être globale. Par exemple, un cas d’utilisation typique est quand vous lisez du code source, vous pouvez rapidement créer des notes associées avec la ligne du curseur courant où du code source vous confond possiblement et alors noter les quelques notes. Continuez à lire. Un peu plus tard, quand vous voulez de voir les notes que vous avez créées, retourner à la ligne et ouvrir le note.
 
+<p align="center">
+  <img src="../asset/showcase.gif">
+</p>
 
-![Showcase](../asset/showcase.gif)
 
 ## Les fonctionnalités
 

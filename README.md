@@ -19,7 +19,9 @@ This is a note taking plugin for Neovim, aiming to help you quickly create, dele
 
 A note can be associated with current cursor line, or current working directory, or be put in global. Thus, for example, a typical use case is that when you are reading source code, you can quickly create note associated with the cursor line where the source code may confuse you, then write down some notes and continue reading. A while later, when you want to read the note you have created at that cursor line, just go back to that cursor line and open the note associated with it.
 
-![Showcase](./asset/showcase.gif)
+<p align="center">
+  <img src="./asset/showcase.gif">
+</p>
 
 ## Features
 
