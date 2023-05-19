@@ -113,7 +113,7 @@ I do not want to break any APIs when you are using this plugin, but it is still 
 | --- | ---|
 | `OpenNoteAtCWD()` | open a note at CWD, you will input the name of the note|
 | `OpenNoteAtLine(line)` | open a note associated with a given line |
-| `OpenNoteAtCurrentLine(line)` | open a note associated with the current cursor line |
+| `OpenNoteAtCurrentLine()` | open a note associated with the current cursor line |
 | `OpenNoteAtGlobal()` | open a note in global, you will input the name of the note |
 
 3. Delete note
@@ -122,7 +122,7 @@ I do not want to break any APIs when you are using this plugin, but it is still 
 | --- | ---|
 | `DeleteNoteAtCWD()` | delete a note at CWD, you will input the name of the note|
 | `DeleteNoteAtLine(line)` | delete a note associated with a given line|
-| `DeleteNoteAtCurrentLine(line)` | delete a note associated with the current cursor line|
+| `DeleteNoteAtCurrentLine()` | delete a note associated with the current cursor line|
 | `DeleteNoteAtGlobal()` | delete a note in global, you will input the name of the note |
 
 4. List note
