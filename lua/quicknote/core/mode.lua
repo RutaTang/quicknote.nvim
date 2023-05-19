@@ -27,7 +27,7 @@ end
 M.SwitchToPortableMode = SwitchToPortableMode
 
 local ToggleMode = function()
-    if utils.config.GetMode == "resident" then
+    if utils.config.GetMode() == "resident" then
         SwitchToPortableMode()
     else
         SwitchToResidentMode()
