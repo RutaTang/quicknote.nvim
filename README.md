@@ -41,20 +41,16 @@ Use any plugin manager you like.
 
 *Note: This plugin uses [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim), thus please make sure it is in the dependencies or in your plugin list.*
 
-For lazy.nvim (a modern plugin manager for Neovim): 
+For lazy.nvim plugin manager: 
 
 ```lua
 require("lazy").setup({
-  { "RutaTang/quicknote.nvim", config={}, dependencies = { "nvim-lua/plenary.nvim"} },
+  { "RutaTang/quicknote.nvim", config=function()
+        -- you must call setup to let quicknote.nvim works correctly
+        require("quicknote").setup({})
+  end
+  , dependencies = { "nvim-lua/plenary.nvim"} },
 })
-```
-
-For packer.nvim:
-
-```lua
-require('packer').startup(function(use)
-    use { "RutaTang/quicknote.nvim", requires={"nvim-lua/plenary.nvim"}, config = function() require('quicknote').setup{} end }
-end)
 ```
 
 ## Config
@@ -63,9 +59,12 @@ Currently, there is only one config option, but more options might be coming.
 
 ```lua
 require("lazy").setup({
-  { "RutaTang/quicknote.nvim", config={
-    mode = "portable" -- "portable" | "resident", default to "portable"
-  }, dependencies = { "nvim-lua/plenary.nvim"} },
+  { "RutaTang/quicknote.nvim", config=function()
+        require("quicknote").setup({
+            mode = "portable" -- "portable" | "resident", default to "portable"
+        })
+  end
+  , dependencies = { "nvim-lua/plenary.nvim"} },
 })
 ```
 
