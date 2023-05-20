@@ -32,16 +32,12 @@
 
 ```lua
 require("lazy").setup({
-  { "RutaTang/quicknote.nvim", config={}, dependencies = { "nvim-lua/plenary.nvim"} },
+  { "RutaTang/quicknote.nvim", config=function()
+        -- you must call setup to let quicknote.nvim works correctly
+        require("quicknote").setup({})
+  end
+  , dependencies = { "nvim-lua/plenary.nvim"} },
 })
-```
-
-或 packer.nvim:
-
-```lua
-require('packer').startup(function(use)
-    use { "RutaTang/quicknote.nvim", requires={"nvim-lua/plenary.nvim"}, config = function() require('quicknote').setup{} end }
-end)
 ```
 
 ## 配置
@@ -50,9 +46,12 @@ end)
 
 ```lua
 require("lazy").setup({
-  { "RutaTang/quicknote.nvim", config={
-    mode = "portable" -- "portable" | "resident", 默认 "portable"
-  }, dependencies = { "nvim-lua/plenary.nvim"} },
+  { "RutaTang/quicknote.nvim", config=function()
+        require("quicknote").setup({
+            mode = "portable" -- "portable" | "resident", default to "portable"
+        })
+  end
+  , dependencies = { "nvim-lua/plenary.nvim"} },
 })
 ```
 
