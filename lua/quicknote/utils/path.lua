@@ -10,9 +10,9 @@ local M = {}
 M.GetDataPath = function()
     local mode = config.GetMode()
     if mode == "resident" then
-        return vim.fn.stdpath("state") .. "/quicknote"
+        return vim.fs.normalize(vim.fn.stdpath("state") .. "/quicknote")
     elseif mode == "portable" then
-        return vim.fn.getcwd() .. "/.quicknote"
+        return vim.fs.normalize(vim.fn.getcwd() .. "/.quicknote")
     else
         error("Invalid mode: " .. mode .. ". Valid modes are: resident, portable")
     end
