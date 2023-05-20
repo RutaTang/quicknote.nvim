@@ -20,7 +20,7 @@ M.CreateFileAsync = function(path)
     local err, stat = async.uv.fs_stat(path)
     if err or stat == nil then
         -- create note file for current line
-        local err, fd = async.uv.fs_open(path, "w", tonumber("777", 8))
+        local err, fd = async.uv.fs_open(path, "w", tonumber("666", 8))
         if err or fd == nil then
             error("Error: " .. err)
         end
