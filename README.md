@@ -1,13 +1,21 @@
 # Quick Note
 
+
+
+
+&nbsp;
+
 <p align="center">
 <img alt="logo" src="./asset/logo.png" width="150" height="150"/>
 </p>
+
+&nbsp;
 
 <p align="center">
 <a href="./i18n/zh.md">[简体中文]</a>
 <a href="./i18n/fr.md">[Français]</a>
 </p>
+
 
 <p align="center">
 <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/RutaTang/quicknote.nvim">
