@@ -7,6 +7,10 @@
 </p>
 
 <p align="center">
+<img alt="logo" src="./asset/logo.png"
+</p>
+
+<p align="center">
 <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/RutaTang/quicknote.nvim">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/RutaTang/quicknote.nvim">
 <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/RutaTang/quicknote.nvim">
