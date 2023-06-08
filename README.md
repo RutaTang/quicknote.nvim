@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-<img alt="logo" src="./asset/logo.png"
+<img alt="logo" src="./asset/logo.png" width="150" height="150"/>
 </p>
 
 <p align="center">
