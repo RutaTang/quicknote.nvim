@@ -25,7 +25,18 @@ local getHashedNoteDirPath = function(filePath)
     if config.GetMode() == "portable" then
         filePath = path:new(filePath):make_relative()
     end
-    local noteDirName = sha.sha1(filePath) -- hash current buffer path
+    -- get the current git branch
+    local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD")
+    if vim.v.shell_error == 0 then
+        if branch == "HEAD" then
+            -- the HEAD is detached, use the commit id instead
+            branch = vim.fn.system("git rev-parse HEAD")
+        end
+    else
+        branch = ""
+    end
+    print(filePath)
+    local noteDirName = sha.sha1(filePath .. branch) -- hash current buffer path with git branch
     -- get hashed note dir path
     local noteDirPath = path:new(dataPath, noteDirName).filename
     return noteDirPath
