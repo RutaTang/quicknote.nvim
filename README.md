@@ -66,13 +66,15 @@ require("lazy").setup({
 
 ## Config
 
-Currently, there is only one config option, but more options might be coming.
+Currently, there is only two config option, but more options might be coming.
 
 ```lua
 require("lazy").setup({
   { "RutaTang/quicknote.nvim", config=function()
         require("quicknote").setup({
-            mode = "portable" -- "portable" | "resident", default to "portable"
+            mode = "portable", -- "portable" | "resident", default to "portable"
+            sign = "N" -- This is used for the signs on the left side (refer to ShowNoteSigns() api).
+                       -- You can change it to whatever you want (eg. some nerd fonts icon), 'N' is default
         })
   end
   , dependencies = { "nvim-lua/plenary.nvim"} },
