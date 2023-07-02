@@ -35,7 +35,6 @@ local getHashedNoteDirPath = function(filePath)
     else
         branch = ""
     end
-    print(filePath)
     local noteDirName = sha.sha1(filePath .. branch) -- hash current buffer path with git branch
     -- get hashed note dir path
     local noteDirPath = path:new(dataPath, noteDirName).filename
