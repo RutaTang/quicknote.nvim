@@ -66,7 +66,7 @@ require("lazy").setup({
 
 ## Config
 
-Currently, there is only two config option, but more options might be coming.
+Currently, there are only two config options, but more options might be coming.
 
 ```lua
 require("lazy").setup({
@@ -92,7 +92,7 @@ require("lazy").setup({
 
 ### Advanced Usage
 
-#### 1. How quicknote.nvim works ?
+#### 1. How does quicknote.nvim work?
 
 Whenever you create a note associated to the current cursor line, CWD or global, a folder named by the hashed path of current buffer or CWD will be created and I call it "Note Directory" which will store all your notes associated with a certain buffer, CWD or global (Global note directory is not hashed and just named as "global").
 
