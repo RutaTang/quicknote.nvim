@@ -1,6 +1,7 @@
 -- default config
 local config = {
     mode = "portable", -- "resident" or "portable"
+    sign = "N",
 }
 
 -- Export
@@ -26,5 +27,10 @@ local GetMode = function()
     return config.mode
 end
 M.GetMode = GetMode
+
+local GetSign = function()
+    return config.sign
+end
+M.GetSign = GetSign
 
 return M

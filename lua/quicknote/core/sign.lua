@@ -1,4 +1,5 @@
 local utils_path = require("quicknote.utils.path")
+local utils_config = require("quicknote.utils.config")
 local path = require("plenary.path")
 
 local SIGN_NAME = "QuickNote"
@@ -28,7 +29,7 @@ end
 
 -- define sign
 function M.DefineSign()
-    vim.fn.sign_define(SIGN_NAME, { text = "N", texthl = "QuickNote", linehl = "", numhl = "" })
+    vim.fn.sign_define(SIGN_NAME, { text = utils_config.GetSign(), texthl = "QuickNote", linehl = "", numhl = "" })
 end
 
 -- get sign display state for a buffer
