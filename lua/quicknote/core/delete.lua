@@ -25,7 +25,7 @@ local M = {}
 local DeleteNoteAtLine = function(line)
     local noteDirPath = utils.path.getNoteDirPathForCurrentBuffer()
     -- get note file path
-    local noteFilePath = path:new(noteDirPath, line .. ".md").filename
+    local noteFilePath = path:new(noteDirPath, line .. "." .. utils.config.GetFileType()).filename
 
     -- check if note file exist
     checkAndDeleteNoteFile(noteFilePath)
@@ -51,7 +51,7 @@ local DeleteNoteAtGlobal = function()
     local noteDirPath = utils.path.getNoteDirPathForGlobal()
 
     -- get note file path
-    local noteFilePath = path:new(noteDirPath, fileName .. ".md").filename
+    local noteFilePath = path:new(noteDirPath, fileName .. "." .. utils.config.GetFileType()).filename
 
     -- check if note file exist
     checkAndDeleteNoteFile(noteFilePath)
@@ -73,7 +73,7 @@ local DeleteNoteAtCWD = function()
     local noteDirPath = utils.path.getNoteDirPathForCWD()
 
     -- get note file path
-    local noteFilePath = path:new(noteDirPath, fileName .. ".md").filename
+    local noteFilePath = path:new(noteDirPath, fileName .. "." .. utils.config.GetFileType()).filename
 
     -- check if note file exist
     checkAndDeleteNoteFile(noteFilePath)

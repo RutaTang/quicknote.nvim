@@ -18,7 +18,7 @@ local NewNoteAtGlobalAsync = function()
     utils.fs.MKDirAsync(noteDirPtha)
 
     -- create note file
-    local noteFilePath = path:new(noteDirPtha, fileName .. ".md").filename
+    local noteFilePath = path:new(noteDirPtha, fileName .. "." .. utils.config.GetFileType()).filename
     utils.fs.CreateFileAsync(noteFilePath)
 end
 M.NewNoteAtGlobal = function()
@@ -41,7 +41,7 @@ local NewNoteAtCWDAsync = function()
     utils.fs.MKDirAsync(noteDirPath)
 
     -- create note files (if not exist)
-    local noteFilePath = path:new(noteDirPath, fileName .. ".md").filename
+    local noteFilePath = path:new(noteDirPath, fileName .. "." .. utils.config.GetFileType()).filename
     utils.fs.CreateFileAsync(noteFilePath)
 end
 M.NewNoteAtCWD = function()
@@ -62,7 +62,7 @@ local NewNoteAtLineAsync = function(line)
     utils.fs.MKDirAsync(noteDirPath)
 
     -- create note file (if not exist)
-    local noteFilePath = path:new(noteDirPath, line .. ".md").filename
+    local noteFilePath = path:new(noteDirPath, line .. "." .. utils.config.GetFileType()).filename
     utils.fs.CreateFileAsync(noteFilePath)
 end
 M.NewNoteAtLine = function(line)

@@ -2,6 +2,7 @@
 local config = {
     mode = "portable", -- "resident" or "portable"
     sign = "N",
+    filetype = "md"
 }
 
 -- Export
@@ -32,5 +33,10 @@ local GetSign = function()
     return config.sign
 end
 M.GetSign = GetSign
+
+local GetFileType = function()
+    return config.filetype
+end
+M.GetFileType = GetFileType
 
 return M
