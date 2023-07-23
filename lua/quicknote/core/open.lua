@@ -23,7 +23,7 @@ end
 local OpenNoteAtLine = function(line)
     local noteDirPath = utils.path.getNoteDirPathForCurrentBuffer()
     -- get note file path
-    local noteFilePath = path:new(noteDirPath, line .. ".md").filename
+    local noteFilePath = path:new(noteDirPath, line .. "." .. utils.config.GetFileType()).filename
     -- check if note file exist
     checkAndOpenNoteFile(noteFilePath)
 end
@@ -45,7 +45,7 @@ local OpenNoteAtGlobal = function()
     local noteDirPath = utils.path.getNoteDirPathForGlobal()
 
     -- get note file path
-    local noteFilePath = path:new(noteDirPath, fileName .. ".md").filename
+    local noteFilePath = path:new(noteDirPath, fileName .. "." .. utils.config.GetFileType()).filename
 
     -- check if note file exist
     checkAndOpenNoteFile(noteFilePath)
@@ -67,7 +67,7 @@ local OpenNoteAtCWD = function()
     local noteDirPath = utils.path.getNoteDirPathForCWD()
 
     -- get note file path
-    local noteFilePath = path:new(noteDirPath, fileName .. ".md").filename
+    local noteFilePath = path:new(noteDirPath, fileName .. "." .. utils.config.GetFileType()).filename
 
     -- check if note file exist
     checkAndOpenNoteFile(noteFilePath)
