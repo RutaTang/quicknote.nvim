@@ -38,7 +38,7 @@ A note can be associated with current cursor line, or current working directory,
 
 🎉 **All main features have already been implemented.** New features may probabily be introduced after fixing potential bugs, optimizing, and writing instruction/tutorial.
 
-- [x] In-place notes: no worrying about jumpping out of current workflow to take notes or managing the notes tediously. Just take notes in-place and make the notes associate with current cursor line, working directory or global directory.  
+- [x] In-place notes: no worrying about jumpping out of current workflow to take notes or managing the notes tediously. Just take notes in-place and make the notes associate with current cursor line, working directory or global directory.
 - [x] Jump between notes: easily jump between notes in current buffer.
 - [x] List notes: list the notes you have writen.
 - [x] Delete notes: delete notes you do not need quickly and in-place
@@ -52,7 +52,7 @@ Use any plugin manager you like.
 
 *Note: This plugin uses [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim), thus please make sure it is in the dependencies or in your plugin list.*
 
-For lazy.nvim plugin manager: 
+For lazy.nvim plugin manager:
 
 ```lua
 require("lazy").setup({
@@ -75,7 +75,7 @@ require("lazy").setup({
             mode = "portable", -- "portable" | "resident", default to "portable"
             sign = "N", -- This is used for the signs on the left side (refer to ShowNoteSigns() api).
                        -- You can change it to whatever you want (eg. some nerd fonts icon), 'N' is default
-            filetype = "md", 
+            filetype = "md",
         })
   end
   , dependencies = { "nvim-lua/plenary.nvim"} },
@@ -107,6 +107,23 @@ There are two modes in quicknote.nvim, "resident" mode and "protable" mode. They
 2. **Pollution or not**:In resident mode, all notes, regardless of whether they are associated with files, CWD or global, will be put in `$XDG_STATE_PATH` and will never pollute your project. But in portable mode, since notes will be located in the `.quicknote` folder in your CWD, it may pollute your project if you consider it as a "pollution".
 2. **Portable or not**: In resident mode, the notes you have created will be hard to transfer to another computer. And if you move project which have notes associated with it to another computer or even another directory, all notes associated with it will be lost. But in protable note, you can transfer your project from one path to another or from one computer to another without worrying about lossing notes. You can even share the project with notes to your colleagues or friends who use Neovim and this plugin. They will be able to see the notes you have created.
 
+#### 3. Telescope.nvim integration
+
+If you use [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim), you can use `:Telescope quicknote [scope=<Scope>]` to list all notes in given scope, `<Scope>` can be `CurrentBuffer`, `CWD` or `Global`.
+If you do not specify the scope
+, it will list with default scope which is `CWD` and can be changed in the telescope setup:
+```lua
+require("telescope").setup({
+    extensions = {
+        quicknote = {
+            defaultScope = "CWD",
+        }
+    }
+})
+
+require("telescope").load_extension("quicknote")
+```
+
 ## API
 
 I do not want to break any APIs when you are using this plugin, but it is still possible if some APIs are not rational or potential bugs force them to be changed. I may use semantic versioning later to avoid breaking APIs in the major version.
@@ -120,7 +137,7 @@ I do not want to break any APIs when you are using this plugin, but it is still 
 | `NewNoteAtCurrentLine()`| create a note at current cursor line|
 | `NewNoteAtGlobal` | create a note which can be accessed globally|
 
-2. Open note 
+2. Open note
 
 | Function | Description |
 | --- | ---|
@@ -175,8 +192,8 @@ I do not want to break any APIs when you are using this plugin, but it is still 
 | Funtion | Description |
 | --- | --- |
 | `ExportNotesForCurrentBuffer()` | export all notes associated with the current buffer to a destination dir |
-| `ExportNotesForCWD()` | export all notes associated with CWD, but notes associated with the files under CWD are not exported | 
-| `ExportNotesForGlobal()` | export all notes that have been put in global | 
+| `ExportNotesForCWD()` | export all notes associated with CWD, but notes associated with the files under CWD are not exported |
+| `ExportNotesForGlobal()` | export all notes that have been put in global |
 
 9. Import notes
 
