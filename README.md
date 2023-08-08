@@ -99,13 +99,13 @@ Whenever you create a note associated to the current cursor line, CWD or global,
 
 For example, when you create a note at line 2 in a file named `hello_world.lua`, you will have a "Note Directory" created at "Data Path" (in "resident" mode, it is `vim.fn.stdpath("state") .. "/quicknote"`; in "portable" mode, it is ".quicknote" at root of your CWD). In the "Data Path", you will see a folder with hashed name, and if you open it, you will see "2.md" which is the note you have just created for this file and "2" means it is associated with line 2.
 
-#### 2. Resident mode vs Protable mode
+#### 2. Resident mode vs Portable mode
 
-There are two modes in quicknote.nvim, "resident" mode and "protable" mode. They are almost similar. The big differences are:
+There are two modes in quicknote.nvim, "resident" mode and "portable" mode. They are almost similar. The big differences are:
 
 1. **`Global` API**: in resident mode, you can use API ended with `Global` and notes stored globally can be accessed whenever you use Neovim, even if you are not in the working directory where you created your notes.  In portable note, you can not use API ended with `Global`.
 2. **Pollution or not**:In resident mode, all notes, regardless of whether they are associated with files, CWD or global, will be put in `$XDG_STATE_PATH` and will never pollute your project. But in portable mode, since notes will be located in the `.quicknote` folder in your CWD, it may pollute your project if you consider it as a "pollution".
-2. **Portable or not**: In resident mode, the notes you have created will be hard to transfer to another computer. And if you move project which have notes associated with it to another computer or even another directory, all notes associated with it will be lost. But in protable note, you can transfer your project from one path to another or from one computer to another without worrying about lossing notes. You can even share the project with notes to your colleagues or friends who use Neovim and this plugin. They will be able to see the notes you have created.
+2. **Portable or not**: In resident mode, the notes you have created will be hard to transfer to another computer. And if you move project which have notes associated with it to another computer or even another directory, all notes associated with it will be lost. But in portable note, you can transfer your project from one path to another or from one computer to another without worrying about lossing notes. You can even share the project with notes to your colleagues or friends who use Neovim and this plugin. They will be able to see the notes you have created.
 
 #### 3. Telescope.nvim integration
 
