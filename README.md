@@ -126,7 +126,7 @@ require("telescope").load_extension("quicknote")
 
 ## Usage Notes
 
-If you are in **resident mode** and you are using **git** for that project, the better practise may be **commiting changes to the branch before checkouting to another branch**, since all notes are stored within your project folder rather global folder, which means if you commit changes which include changes of notes associated with branch `A` to another branch `B`, you may then not be able to see the changes of notes associated with branch `A` even you are now working around branch `A`.
+If you are in **resident mode** and you are using **git** for that project, the better practise may be **commiting changes to the branch before checkouting to another branch**, since all notes are stored within your project folder rather than global folder, which means if you commit changes which include changes of notes associated with branch `A` to another branch `B`, you may then not be able to see the changes of notes associated with branch `A` even you are now working around branch `A`.
 
 ## API
 
