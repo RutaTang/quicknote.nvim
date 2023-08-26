@@ -66,7 +66,7 @@ require("lazy").setup({
 
 ## Config
 
-Currently, there are only two config options, but more options might be coming.
+Currently, there are four config options with their default value as follow, more options might be coming.
 
 ```lua
 require("lazy").setup({
