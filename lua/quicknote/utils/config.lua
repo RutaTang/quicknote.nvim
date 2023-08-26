@@ -2,7 +2,8 @@
 local config = {
     mode = "portable", -- "resident" or "portable"
     sign = "N",
-    filetype = "md"
+    filetype = "md",
+    git_branch_recognizable = true, -- if true, quicknote will separate notes by git branch, but it should only be used with resident mode
 }
 
 -- Export
@@ -38,5 +39,10 @@ local GetFileType = function()
     return config.filetype
 end
 M.GetFileType = GetFileType
+
+local GetGitBranchRecognizable = function()
+    return config.git_branch_recognizable
+end
+M.IsGitBranchRecognizable = GetGitBranchRecognizable
 
 return M

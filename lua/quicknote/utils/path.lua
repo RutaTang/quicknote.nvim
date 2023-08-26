@@ -21,21 +21,28 @@ end
 local getHashedNoteDirPath = function(filePath)
     -- data path is where note dir is stored
     local dataPath = M.GetDataPath()
-    -- get hash of note dir path
+    -- get hashed note dir name
     if config.GetMode() == "portable" then
+        -- make the path relative to the current working directory
         filePath = path:new(filePath):make_relative()
-    end
-    -- get the current git branch
-    local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD")
-    if vim.v.shell_error == 0 then
-        if branch == "HEAD" then
-            -- the HEAD is detached, use the commit id instead
-            branch = vim.fn.system("git rev-parse HEAD")
+    else -- for resident mode, notes can be separated by git branch
+        filePath = path:new(filePath).filename
+        local gitBranchRecognizable = config.IsGitBranchRecognizable()
+        if gitBranchRecognizable == true then
+            -- get the current git branch
+            local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD")
+            if vim.v.shell_error == 0 then
+                if branch == "HEAD" then
+                    -- the HEAD is detached, use the commit id instead
+                    branch = vim.fn.system("git rev-parse HEAD")
+                end
+            else
+                branch = ""
+            end
+            filePath = filePath .. branch -- append git branch to the
         end
-    else
-        branch = ""
     end
-    local noteDirName = sha.sha1(filePath .. branch) -- hash current buffer path with git branch
+    local noteDirName = sha.sha1(filePath) -- hash current buffer path
     -- get hashed note dir path
     local noteDirPath = path:new(dataPath, noteDirName).filename
     return noteDirPath
