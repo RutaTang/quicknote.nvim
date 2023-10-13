@@ -46,7 +46,8 @@ function M.ShowNoteSigns()
     local noteDirPath = utils_path.getNoteDirPathForCurrentBuffer()
 
     -- get all notes under this path
-    local noteFilePaths = vim.fn.glob(noteDirPath .. "/*.md", true, true)
+    local noteFileType = utils_config.GetFileType()
+    local noteFilePaths = vim.fn.glob(noteDirPath .. "/*." .. noteFileType , true, true)
     if noteFilePaths == nil or #noteFilePaths <= 0 then
         return
     end
