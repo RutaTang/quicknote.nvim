@@ -6,10 +6,10 @@ local utils = require("quicknote.utils")
 local path = require("plenary.path")
 
 local listNotes = function(noteDirPath)
-    if not vim.loop.fs_stat(noteDirPath) then
-        return
-    end
     local notes = {}
+    if not vim.loop.fs_stat(noteDirPath) then
+        return notes
+    end
     local noteFilePaths = vim.fn.glob(noteDirPath .. "/*." .. utils.config.GetFileType(), true, true)
     if noteFilePaths and #noteFilePaths ~= 0 then
         for _, noteFilePath in ipairs(noteFilePaths) do
