@@ -2,6 +2,7 @@ local async = require("plenary.async")
 local path = require("plenary.path")
 local utils = require("quicknote.utils")
 local sign = require("quicknote.core.sign")
+local open = require("quicknote.core.open")
 
 -- Export
 local M = {}
@@ -84,6 +85,7 @@ M.NewNoteAtCurrentLine = function()
     async.run(NewNoteAtCurrentLineAsync, function()
         -- if the show sign is enabled, show the sign
         vim.defer_fn(sign.ReShowSignsForCurrentBuffer, 0)
+        vim.defer_fn(open.OpenNoteAtCurrentLine, 0)
     end)
 end
 

@@ -16,5 +16,5 @@ return {
     fs = fs,
     config = config,
     path = path,
-    sha = sha
+    sha = sha,
 }

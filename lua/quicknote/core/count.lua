@@ -1,4 +1,4 @@
-local utils= require("quicknote.utils")
+local utils = require("quicknote.utils")
 
 local getNotesCount = function(noteDirPath)
     -- check if note dir exist

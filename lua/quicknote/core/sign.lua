@@ -47,7 +47,7 @@ function M.ShowNoteSigns()
 
     -- get all notes under this path
     local noteFileType = utils_config.GetFileType()
-    local noteFilePaths = vim.fn.glob(noteDirPath .. "/*." .. noteFileType , true, true)
+    local noteFilePaths = vim.fn.glob(noteDirPath .. "/*." .. noteFileType, true, true)
     if noteFilePaths == nil or #noteFilePaths <= 0 then
         return
     end

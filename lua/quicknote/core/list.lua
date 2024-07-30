@@ -1,4 +1,4 @@
-local utils= require("quicknote.utils")
+local utils = require("quicknote.utils")
 local path = require("plenary.path")
 
 -- list all notes in a note dir

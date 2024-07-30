@@ -67,5 +67,4 @@ return {
     ImportNotesForCurrentBuffer = core.ImportNotesForCurrentBuffer,
     ImportNotesForGlobal = core.ImportNotesForGlobal,
     ImportNotesForCWD = core.ImportNotesForCWD,
-
 }

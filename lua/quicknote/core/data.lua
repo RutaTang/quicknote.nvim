@@ -134,7 +134,7 @@ local ImportNotesForCurrentBuffer = function()
     -- import notes from external source dir
     importNotesFromDestination(noteDirPath)
 end
-M.ImportNotesForCurrentBuffer = function ()
+M.ImportNotesForCurrentBuffer = function()
     ImportNotesForCurrentBuffer()
     -- refresh signs
     sign.ReShowSignsForCurrentBuffer()
