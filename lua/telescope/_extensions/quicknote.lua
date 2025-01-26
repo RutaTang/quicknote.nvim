@@ -7,7 +7,7 @@ local path = require("plenary.path")
 
 local listNotes = function(noteDirPath)
     local notes = {}
-    if not vim.loop.fs_stat(noteDirPath) then
+    if not (vim.uv or vim.loop).fs_stat(noteDirPath) then
         return notes
     end
     local noteFilePaths = vim.fn.glob(noteDirPath .. "/*." .. utils.config.GetFileType(), true, true)
@@ -39,7 +39,7 @@ local finder = function(scope)
         entry_maker = function(entry)
             local name = entry.name
             return {
-                value = entry.path,
+                path = entry.path,
                 display = name,
                 ordinal = name,
             }
